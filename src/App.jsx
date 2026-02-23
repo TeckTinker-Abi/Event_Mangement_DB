@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
+import CategoryPage from "./pages/CategoryPage";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
+          <Route path="/services/:category" element={<CategoryPage />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>

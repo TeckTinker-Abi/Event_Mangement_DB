@@ -106,17 +106,26 @@ const Contact = () => {
         </div>
 
         {/* Zoho Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-5xl mx-auto mb-28 bg-zinc-900/80 backdrop-blur-md p-10 rounded-2xl border border-zinc-700 shadow-xl"
-        >
-          <h2 className="text-2xl font-semibold mb-8 text-center">
-            Event <span className="text-yellow-600">Enquiry Form</span>
-          </h2>
-        </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="max-w-5xl mx-auto mb-28 bg-zinc-900/80 backdrop-blur-md p-10 rounded-2xl border border-zinc-700 shadow-xl"
+>
+  <h2 className="text-2xl font-semibold mb-8 text-center">
+    Event <span className="text-yellow-600">Enquiry Form</span>
+  </h2>
+
+  <iframe
+    src="https://forms.zohopublic.in/thivakarkumarwyn1/form/SpamsEventsDubai/formperma/F4VejrsaZP8ThTIgUkP93iw0nOn_qoCqH2j1VOIN7UA"
+    width="100%"
+    height="800"
+    frameBorder="0"
+    title="Spams Events Dubai"
+    className="rounded-lg"
+  />
+</motion.div>
 
         {/* Why Choose Us */}
         <div className="mt-20 mb-24">

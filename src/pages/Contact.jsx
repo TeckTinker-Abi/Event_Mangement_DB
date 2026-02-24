@@ -35,16 +35,15 @@ const Contact = () => {
   return (
     <div className="relative min-h-screen text-white overflow-hidden">
 
-      {/* BACKGROUND IMAGE */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/contactbg.webp')",
-        }}
-      ></div>
-
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+      {/* HERO BACKGROUND IMAGE */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/contactbg.webp"
+          alt="Luxury Event Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/80"></div>
+      </div>
 
       {/* CONTENT */}
       <div className="relative z-10 px-6 md:px-20 py-16">
@@ -54,6 +53,7 @@ const Contact = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Contact <span className="text-yellow-600">Us</span>
           </h1>
+
           <p className="text-gray-300 max-w-2xl mx-auto">
             Let us craft unforgettable experiences in Dubai.
             Share your vision and our team will make it extraordinary.
@@ -62,6 +62,7 @@ const Contact = () => {
 
         {/* Contact Cards */}
         <div className="max-w-6xl mx-auto mb-24 grid md:grid-cols-2 gap-10">
+          
           {[
             { title: "Location", value: "Dubai, United Arab Emirates" },
             {
@@ -85,7 +86,7 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-zinc-900/80 to-zinc-800/70 backdrop-blur-md p-10 rounded-2xl border border-zinc-700 hover:border-yellow-600 hover:shadow-[0_0_40px_rgba(202,138,4,0.25)] transform hover:-translate-y-3 hover:scale-105 transition-all duration-500"
+              className="relative overflow-hidden bg-gradient-to-br from-zinc-900/90 via-zinc-800/80 to-black/80 backdrop-blur-xl p-10 rounded-3xl border border-yellow-600/40 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 shadow-[0_0_25px_rgba(234,179,8,0.25)] hover:shadow-[0_0_60px_rgba(234,179,8,0.55)]"
             >
               <h3 className="text-xl font-semibold text-yellow-600 mb-4">
                 {item.title}
@@ -105,27 +106,73 @@ const Contact = () => {
           ))}
         </div>
 
-        {/* Zoho Form */}
-<motion.div
-  initial={{ opacity: 0, y: 80 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
-  className="max-w-5xl mx-auto mb-28 bg-zinc-900/80 backdrop-blur-md p-10 rounded-2xl border border-zinc-700 shadow-xl"
->
-  <h2 className="text-2xl font-semibold mb-8 text-center">
-    Event <span className="text-yellow-600">Enquiry Form</span>
-  </h2>
+        {/* Custom Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="relative overflow-hidden max-w-5xl mx-auto mb-28 bg-gradient-to-br from-zinc-900/90 via-black/80 to-zinc-900/90 backdrop-blur-2xl p-12 rounded-3xl border border-yellow-600/30 shadow-2xl"
+        >
+          <h2 className="text-2xl font-semibold mb-8 text-center">
+            Event <span className="text-yellow-600">Enquiry Form</span>
+          </h2>
 
-  <iframe
-    src="https://forms.zohopublic.in/thivakarkumarwyn1/form/SpamsEventsDubai/formperma/F4VejrsaZP8ThTIgUkP93iw0nOn_qoCqH2j1VOIN7UA"
-    width="100%"
-    height="800"
-    frameBorder="0"
-    title="Spams Events Dubai"
-    className="rounded-lg"
-  />
-</motion.div>
+          <form className="grid md:grid-cols-2 gap-6">
+
+            <input
+              type="text"
+              placeholder="Full Name"
+              required
+             className="p-4 rounded-xl bg-zinc-800/80 text-white border border-zinc-600 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/40 transition duration-300"
+            />
+
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              required
+             className="p-4 rounded-xl bg-zinc-800/80 text-white border border-zinc-600 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/40 transition duration-300"
+            />
+
+            <input
+              type="email"
+              placeholder="Email Address"
+              required
+              className="p-4 rounded-xl bg-zinc-800/80 text-white border border-zinc-600 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/40 transition duration-300"
+            />
+
+            <select
+              required
+              defaultValue=""
+             className="p-4 rounded-xl bg-zinc-800/80 text-white border border-zinc-600 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/40 transition duration-300 md:col-span-2"
+            >
+              <option value="" disabled>
+                Select Event Type
+              </option>
+              <option value="Social & Party Events">Social & Party Events</option>
+              <option value="Wedding & Relationship Events">Wedding & Relationship Events</option>
+              <option value="Corporate & Business Events">Corporate & Business Events</option>
+              <option value="Education & Youth Events">Education & Youth Events</option>
+              <option value="Cultural & Religious Events (Important in Dubai)">Cultural & Religious Events (Important in Dubai)</option>
+              <option value="Entertainment & Luxury Events">Entertainment & Luxury Events</option>
+              <option value="Memorial & End-of-Life Events">Memorial & End-of-Life Events</option>
+            </select>
+
+            <textarea
+              rows="4"
+              placeholder="Enter your message"
+              className="p-4 rounded-xl bg-zinc-800/80 text-white border border-zinc-600 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/40 transition duration-300 md:col-span-2"
+            ></textarea>
+
+            <button
+              type="submit"
+             className="md:col-span-2 bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 hover:from-yellow-400 hover:to-amber-400 text-black font-semibold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-yellow-500/40 hover:scale-105"
+            >
+              Submit Enquiry
+            </button>
+
+          </form>
+        </motion.div>
 
         {/* Why Choose Us */}
         <div className="mt-20 mb-24">

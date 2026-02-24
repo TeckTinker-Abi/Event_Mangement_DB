@@ -1,127 +1,142 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion, useScroll, useSpring } from "framer-motion";
 import homeBg from "../assets/homebackground.png";
-import logo from "../assets/logoEvent.png";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  }),
-};
-
-
-const CountUp = ({ end, duration = 5000, suffix = "" }) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const increment = end / (duration / 16);
-
-    const counter = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setCount(end);
-        clearInterval(counter);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
-
-    return () => clearInterval(counter);
-  }, [end, duration]);
-
-  return (
-    <span>
-      {count}
-      {suffix}
-    </span>
-  );
-};
-
 
 function Home() {
   const navigate = useNavigate();
+  const heroRef = useRef(null);
 
-  // Scroll to top when page loads
+  /* ================= SCROLL PROGRESS ================= */
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  /* ================= SCROLL TO TOP ================= */
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  /* ================= FADE ANIMATION ================= */
+  const fadeUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.15,
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    }),
+  };
+
+  /* ================= COUNT UP COMPONENT ================= */
+  const CountUp = ({ end, duration = 2000, suffix = "" }) => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      let start = 0;
+      const increment = end / (duration / 16);
+
+      const counter = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          setCount(end);
+          clearInterval(counter);
+        } else {
+          setCount(Math.floor(start));
+        }
+      }, 16);
+
+      return () => clearInterval(counter);
+    }, [end, duration]);
+
+    return (
+      <span>
+        {count}
+        {suffix}
+      </span>
+    );
+  };
+
   return (
     <main className="bg-black text-white overflow-x-hidden">
 
-      {/* HERO EXPERIENCES */}
+      {/* ================= SCROLL PROGRESS BAR ================= */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-[2px] bg-yellow-500 origin-left z-[100]"
+        style={{ scaleX }}
+      />
+
+      {/* ================= HERO SECTION ================= */}
       <section
+        ref={heroRef}
         className="relative min-h-[95vh] flex items-center justify-center text-center px-4 overflow-hidden bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${homeBg})`,
-        }}
+        style={{ backgroundImage: `url(${homeBg})` }}
       >
-
-        {/* Overlay Gradient (controls brightness top → bottom) */}
-        <div className="absolute inset-0 bg-gradient-to-b 
-                  from-black/10 
-                  via-black/15 
-                  to-black/85">
-        </div>
-
-        {/* Optional Soft Glow */}
-        <div className="absolute inset-0 bg-black/20 backdrop-brightness-75"></div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/90" />
+        <div className="absolute inset-0 bg-black/30 backdrop-brightness-75" />
 
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={fadeUp}
           className="max-w-5xl relative z-10"
         >
-
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-yellow-500 leading-tight">
+          <motion.h1
+            variants={fadeUp}
+            custom={1}
+            className="text-5xl md:text-7xl font-bold text-yellow-500 leading-tight"
+          >
             Bespoke Luxury Events
-          </h1>
+          </motion.h1>
 
-          {/* Sub Heading */}
-          <h2 className="text-2xl md:text-3xl font-bold text-white mt-4 tracking-wide">
+          <motion.h2
+            variants={fadeUp}
+            custom={2}
+            className="text-2xl md:text-3xl font-bold mt-4 tracking-wide"
+          >
             In the Heart of Dubai
-          </h2>
+          </motion.h2>
 
-          {/* Divider */}
-          <div className="w-24 h-[2px] bg-yellow-500 mx-auto my-8"></div>
-
-          {/* Description */}
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-            We curate extraordinary celebrations defined by iconic venues, refined
-            aesthetics, and flawless execution — from exclusive private yacht soirées
-            to opulent weddings and high-profile corporate affairs, each crafted to
-            exceed the highest expectations.
-          </p>
-
-          {/* Button */}
           <motion.div
+            variants={fadeUp}
+            custom={3}
+            className="w-24 h-[2px] bg-yellow-500 mx-auto my-8"
+          />
+
+          <motion.p
+            variants={fadeUp}
+            custom={4}
+            className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed"
+          >
+            We curate extraordinary celebrations defined by iconic venues,
+            refined aesthetics, and flawless execution — from exclusive
+            private yacht soirées to opulent weddings and high-profile
+            corporate affairs.
+          </motion.p>
+
+          <motion.div
+            variants={fadeUp}
+            custom={5}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block"
           >
             <button
               onClick={() => navigate("/services")}
-              className="px-6 py-2.5 rounded-full font-semibold text-base 
-                   border-2 border-yellow-500 text-gray-300 
-                   bg-transparent 
-                   hover:bg-yellow-500 hover:text-black 
-                   transition-all duration-300"
+              className="px-6 py-2.5 rounded-full font-semibold border-2 border-yellow-500 text-gray-300 bg-transparent hover:bg-yellow-500 hover:text-black transition-all duration-300"
             >
               Start Planning Today
             </button>
           </motion.div>
-
         </motion.div>
       </section>
 
@@ -282,92 +297,7 @@ function Home() {
         </motion.button>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-black border-t border-gray-800 text-gray-400 pt-16 pb-8 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
 
-          {/* COLUMN 1 – BRAND */}
-          <div>
-            <img
-              src={logo}
-              alt="Luxury Events Logo"
-              className="h-14 mb-6 opacity-90 hover:opacity-100 transition duration-300"
-            />
-            <p className="mb-4 text-sm leading-relaxed">
-              Crafting bespoke luxury events across Dubai with elegance,
-              precision, and unforgettable experiences.
-            </p>
-            <p className="text-yellow-500 font-semibold">
-              +971 50 123 4567
-            </p>
-          </div>
-
-        {/* COLUMN 2 – EVENTS */}
-<div>
-  <h3 className="text-white font-semibold mb-6">
-    Signature Events
-  </h3>
-  <ul className="space-y-3 text-sm">
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      Yacht Party
-    </li>
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      Private Yacht Dinner
-    </li>
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      Beach Party
-    </li>
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      Birthday Party
-    </li>
-  </ul>
-</div>
-
-{/* COLUMN 3 – MORE EVENTS */}
-<div>
-  <h3 className="text-white font-semibold mb-6">
-    Luxury Experiences
-  </h3>
-  <ul className="space-y-3 text-sm">
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      Ramadan Iftar Event
-    </li>
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      Eid Celebration
-    </li>
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      Graduation Party
-    </li>
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      Fashion Show
-    </li>
-  </ul>
-</div>
-
-{/* COLUMN 4 – SOCIAL */}
-<div>
-  <h3 className="text-white font-semibold mb-6">
-    Connect With Us
-  </h3>
-  <ul className="space-y-4 text-sm">
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      Instagram
-    </li>
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      Facebook
-    </li>
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      YouTube
-    </li>
-    <li className="transition hover:text-yellow-500 cursor-pointer">
-      info@luxuryevents.com
-    </li>
-  </ul>
-</div>
-        </div>
-
-
-      </footer>
 
     </main>
   );

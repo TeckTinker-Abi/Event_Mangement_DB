@@ -534,6 +534,11 @@ const EnquiryModal = ({ isOpen, onClose }) => {
               <option value="Social">Social & Party Events</option>
               <option value="Wedding">Wedding & Relationship Events</option>
               <option value="Corporate">Corporate & Business Events</option>
+              <option value="Education and Youth Events">Education and Youth Events</option>
+              <option value="Cultural and Religious Events">Cultural and Religious Events</option>
+              <option value="Entertainment and Luxury Events">Entertainment and Luxury events</option>
+              <option value="Memorial and End of life Events">Memorial and End of life Events</option>
+              <option value="Custom your Events">Custom your Events</option>
             </select>
             {errors.eventType && (
               <p className="text-red-500 text-sm mt-1">{errors.eventType}</p>

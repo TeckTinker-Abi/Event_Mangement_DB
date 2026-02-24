@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function Navbar({ logoUrl }) {
+
+function Navbar({ logoUrl, onOpenEnquiry }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -14,24 +15,24 @@ function Navbar({ logoUrl }) {
   return (
     <nav className="w-full bg-transparent backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
       <div className="px-6 lg:px-20 py-4 flex items-center justify-between">
-       {/* Logo */}
-<NavLink
-  to="/"
-  className="flex items-center"
-  onClick={() => {
-    if (window.location.pathname === "/") {
-      window.location.reload();
-    }
-  }}
->
-  {logoUrl && (
-    <img
-      src={logoUrl}
-      alt="Logo"
-      className="h-15 lg:h-15 w-auto object-contain transition-all duration-300"
-    />
-  )}
-</NavLink>
+        {/* Logo */}
+        <NavLink
+          to="/"
+          className="flex items-center"
+          onClick={() => {
+            if (window.location.pathname === "/") {
+              window.location.reload();
+            }
+          }}
+        >
+          {logoUrl && (
+            <img
+              src={logoUrl}
+              alt="Logo"
+              className="h-15 lg:h-15 w-auto object-contain transition-all duration-300"
+            />
+          )}
+        </NavLink>
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6 lg:gap-10">
           <div className="flex items-center gap-8 text-xs lg:text-sm font-medium uppercase tracking-[0.15em]">
@@ -51,9 +52,8 @@ function Navbar({ logoUrl }) {
             ))}
           </div>
 
-          <button className="bg-yellow-500 text-black text-[11px] lg:text-xs font-black px-6 py-3 rounded-sm hover:bg-white transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(234,179,8,0.3)] active:translate-y-1">
-            INQUIRE NOW
-          </button>
+          <button onClick={() => { setIsMobileMenuOpen(false); onOpenEnquiry(); }}
+            className="bg-yellow-500 text-black font-bold px-4 py-2 lg:px-2 lg:py-2 rounded-lg text-xs lg:text-base hover:bg-yellow-400 transition-all duration-300 shadow-md hover:shadow-yellow-500/40" > INQUIRE NOW </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -75,7 +75,7 @@ function Navbar({ logoUrl }) {
               <NavLink
                 key={link.name}
                 to={link.path}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={({ isActive }) =>
                   `text-sm font-bold uppercase tracking-widest ${isActive
                     ? "text-yellow-500"
@@ -87,7 +87,13 @@ function Navbar({ logoUrl }) {
               </NavLink>
             ))}
 
-            <button className="bg-yellow-500 text-black font-black py-4 rounded-sm text-sm">
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                onOpenEnquiry();
+              }}
+              className="bg-yellow-500 text-black font-extrabold px-8 py-4 rounded-lg text-sm hover:bg-yellow-400 transition-all duration-300 shadow-md hover:shadow-yellow-500/40"
+            >
               INQUIRE NOW
             </button>
           </div>

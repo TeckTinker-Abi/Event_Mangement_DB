@@ -6,27 +6,38 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CategoryPage from "./pages/CategoryPage";
 import logo from "./assets/logoEvent.png";
+import { useState } from "react";
+import EnquiryModal from "./components/EnquiryModal";
 
 function App() {
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   return (
+
     <div className="bg-black text-white min-h-screen flex flex-col font-sans antialiased">
 
       {/* ================= NAVBAR ================= */}
-      <Navbar logoUrl={logo} />
+      <Navbar
+        logoUrl={logo}
+        onOpenEnquiry={() => setIsEnquiryOpen(true)}
+      />
 
       {/* ================= MAIN CONTENT ================= */}
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          
+
           {/* ✅ IMPORTANT: Category Dynamic Route */}
           <Route path="/services/:category" element={<CategoryPage />} />
-          
+
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+       <EnquiryModal
+        isOpen={isEnquiryOpen}
+        onClose={() => setIsEnquiryOpen(false)}
+      />
 
       {/* ================= FOOTER ================= */}
       <footer className="bg-black border-t border-gray-800 text-gray-400">

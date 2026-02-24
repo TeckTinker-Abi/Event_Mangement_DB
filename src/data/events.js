@@ -672,7 +672,10 @@ export const events = [
       "Event Management"
     ],
     capacity: "50 – 500 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Graduation Party/Graduation_Party_1.webp",
+             "/images/Graduation Party/Graduation_Party_2.webp",
+             "/images/Graduation Party/Graduation_Party_3.webp"
+    ]
   },
 
   {
@@ -689,7 +692,10 @@ export const events = [
       "Event Execution"
     ],
     capacity: "200 – 2000 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Convocation Ceremony/Convocation_Ceremony_1.webp",
+             "/images/Convocation Ceremony/Convocation_Ceremony_2.webp",
+             "/images/Convocation Ceremony/Convocation_Ceremony_3.webp"
+    ]
   },
 
   {
@@ -706,7 +712,10 @@ export const events = [
       "Coordination"
     ],
     capacity: "200 – 1500 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/School Annual Day/School_Annual_Day_1.webp",
+             "/images/School Annual Day/School_Annual_Day_2.webp",
+             "/images/School Annual Day/School_Annual_Day_3.webp"
+    ]
   },
 
   {
@@ -723,7 +732,10 @@ export const events = [
       "Photography"
     ],
     capacity: "100 – 500 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Prom Night/Prom_Night_1.webp",
+             "/images/Prom Night/Prom_Night_2.webp",
+             "/images/Prom Night/Prom_Night_3.webp"
+    ]
   },
 
   {
@@ -740,7 +752,10 @@ export const events = [
       "Event Management"
     ],
     capacity: "100 – 800 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/College Farewell/College_Farewell_1.webp",
+             "/images/College Farewell/College_Farewell_2.webp",
+             "/images/College Farewell/College_Farewell_3.webp"
+    ]
   },
 
   // =========================
@@ -761,7 +776,7 @@ export const events = [
       "Coordination"
     ],
     capacity: "50 – 1000 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Ramadan Iftar Event/College_Farewell_3.webp"]
   },
 
   {

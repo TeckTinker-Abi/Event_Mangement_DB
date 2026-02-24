@@ -796,8 +796,7 @@ export const events = [
       "Event Management"
     ],
     capacity: "50 – 1000 Guests",
-    images: ["/images/Eid Celebration
-      /Ramadan_Iftar_Event_1.webp"]
+    images: ["/images/Eid Celebration/Ramadan_Iftar_Event_1.webp"]
   },
 
   {

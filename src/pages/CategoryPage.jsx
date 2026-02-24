@@ -3,12 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { events } from "../data/events";
 import EventCard from "../components/EventCard";
 import EventModal from "../components/EventModal";
+import EnquiryModal from "../components/EnquiryModal"; // Import the EnquiryModal
 import { useState, useEffect, useMemo } from "react";
 
 function CategoryPage() {
   const { category } = useParams();
   const navigate = useNavigate();
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false); // State for Custom Proposal
 
   /* =========================
       SCROLL TO TOP ON LOAD
@@ -29,7 +31,6 @@ function CategoryPage() {
   /* =========================
       ANIMATION VARIANTS (REFINED)
   ========================== */
-  // Smooth Quintic Ease for all transitions
   const smoothEase = [0.22, 1, 0.36, 1];
 
   const containerVars = {
@@ -37,7 +38,7 @@ function CategoryPage() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08, // Fast but silky stagger
+        staggerChildren: 0.08,
         delayChildren: 0.2,
       },
     },
@@ -166,6 +167,7 @@ function CategoryPage() {
           </h2>
 
           <motion.button 
+            onClick={() => setIsEnquiryOpen(true)} // Opens the Enquiry Modal
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-yellow-500 text-black px-12 py-5 font-black uppercase tracking-widest text-xs hover:bg-white transition-colors duration-300 shadow-xl relative overflow-hidden group"
@@ -178,10 +180,23 @@ function CategoryPage() {
 
       {/* ================= MODAL SYSTEM ================= */}
       <AnimatePresence mode="wait">
+        {/* EVENT DETAILS MODAL */}
         {selectedEvent && (
           <EventModal
+            key="event-modal"
             event={selectedEvent}
             onClose={() => setSelectedEvent(null)}
+          />
+        )}
+
+        {/* CUSTOM PROPOSAL MODAL */}
+        {isEnquiryOpen && (
+          <EnquiryModal
+            key="enquiry-modal"
+            isOpen={isEnquiryOpen}
+            onClose={() => setIsEnquiryOpen(false)}
+            // Optional: passing context to the form
+            initialSubject={`Bespoke ${formattedCategory} Vision`} 
           />
         )}
       </AnimatePresence>

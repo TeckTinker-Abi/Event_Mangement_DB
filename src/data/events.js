@@ -20,8 +20,8 @@ export const events = [
     ],
     capacity: "Up to 100 Guests",
     images: ["/images/yacht/yacht_1.webp",
-              "/images/yacht/yacht_2.webp",
-              "/images/yacht/yacht_3.webp"
+      "/images/yacht/yacht_2.webp",
+      "/images/yacht/yacht_3.webp"
     ]
   },
 
@@ -40,8 +40,8 @@ export const events = [
     ],
     capacity: "Up to 30 Guests",
     images: ["/images/yacht private party/yacht_private_party_1.webp",
-              "/images/yacht private party/yacht_private_party_2.webp",
-              "/images/yacht private party/yacht_private_party_3.webp"
+      "/images/yacht private party/yacht_private_party_2.webp",
+      "/images/yacht private party/yacht_private_party_3.webp"
     ]
   },
 
@@ -60,8 +60,8 @@ export const events = [
     ],
     capacity: "50 – 300 Guests",
     images: ["/images/Night Party/Night_Party_1.webp",
-             "/images/Night Party/Night_Party_2.webp",
-             "/images/Night Party/Night_Party_3.webp",
+      "/images/Night Party/Night_Party_2.webp",
+      "/images/Night Party/Night_Party_3.webp",
     ]
   },
 
@@ -80,8 +80,8 @@ export const events = [
     ],
     capacity: "Up to 150 Guests",
     images: ["/images/Rooftop Party/Rooftop_Party_1.webp",
-             "/images/Rooftop Party/Rooftop_Party_2.webp",
-             "/images/Rooftop Party/Rooftop_Party_3.webp"
+      "/images/Rooftop Party/Rooftop_Party_2.webp",
+      "/images/Rooftop Party/Rooftop_Party_3.webp"
     ]
   },
 
@@ -100,8 +100,8 @@ export const events = [
     ],
     capacity: "50 – 250 Guests",
     images: ["/images/Beach Party/Beach_Party_1.webp",
-             "/images/Beach Party/Beach_Party_2.webp",
-             "/images/Beach Party/Beach_Party_3.webp"
+      "/images/Beach Party/Beach_Party_2.webp",
+      "/images/Beach Party/Beach_Party_3.webp"
     ]
   },
 
@@ -120,8 +120,8 @@ export const events = [
     ],
     capacity: "Up to 200 Guests",
     images: ["/images/Pool Party/Pool_Party_1.webp",
-             "/images/Pool Party/Pool_Party_2.webp",
-             "/images/Pool Party/Pool_Party_3.webp",
+      "/images/Pool Party/Pool_Party_2.webp",
+      "/images/Pool Party/Pool_Party_3.webp",
     ]
   },
 
@@ -140,8 +140,8 @@ export const events = [
     ],
     capacity: "20 – 300 Guests",
     images: ["/images/Birthday Party/Birthday_Party_1.webp",
-            "/images/Birthday Party/Birthday_Party_2.webp",
-            "/images/Birthday Party/Birthday_Party_3.webp"
+      "/images/Birthday Party/Birthday_Party_2.webp",
+      "/images/Birthday Party/Birthday_Party_3.webp"
 
     ]
   },
@@ -161,8 +161,8 @@ export const events = [
     ],
     capacity: "Up to 150 Guests",
     images: ["/images/House Party/House_Party_1.webp",
-            "/images/House Party/House_Party_2.webp",
-            "/images/House Party/House_Party_3.webp",
+      "/images/House Party/House_Party_2.webp",
+      "/images/House Party/House_Party_3.webp",
     ]
   },
 
@@ -181,8 +181,8 @@ export const events = [
     ],
     capacity: "Up to 250 Guests",
     images: ["/images/Villa Party/Villa_Party_1.webp",
-             "/images/Villa Party/Villa_Party_2.webp",
-             "/images/Villa Party/Villa_Party_3.webp",
+      "/images/Villa Party/Villa_Party_2.webp",
+      "/images/Villa Party/Villa_Party_3.webp",
     ]
   },
 
@@ -201,8 +201,8 @@ export const events = [
     ],
     capacity: "50 – 400 Guests",
     images: ["/images/Theme Party/Theme_Party_1.webp",
-             "/images/Theme Party/Theme_Party_2.webp",
-             "/images/Theme Party/Theme_Party_3.webp"
+      "/images/Theme Party/Theme_Party_2.webp",
+      "/images/Theme Party/Theme_Party_3.webp"
     ]
   },
 
@@ -221,8 +221,8 @@ export const events = [
     ],
     capacity: "10 – 50 Guests",
     images: ["/images/Bachelor Party/Bachelor_Party_1.webp",
-             "/images/Bachelor Party/Bachelor_Party_2.webp",
-             "/images/Bachelor Party/Bachelor_Party_3.webp"
+      "/images/Bachelor Party/Bachelor_Party_2.webp",
+      "/images/Bachelor Party/Bachelor_Party_3.webp"
     ]
   },
 
@@ -241,8 +241,8 @@ export const events = [
     ],
     capacity: "10 – 40 Guests",
     images: ["/images/Bachelorette Party/Bachelorette_Party_1.webp",
-             "/images/Bachelorette Party/Bachelorette_Party_2.webp",
-             "/images/Bachelorette Party/Bachelorette_Party_3.webp",
+      "/images/Bachelorette Party/Bachelorette_Party_2.webp",
+      "/images/Bachelorette Party/Bachelorette_Party_3.webp",
     ]
   },
 
@@ -261,8 +261,8 @@ export const events = [
     ],
     capacity: "20 – 300 Guests",
     images: ["/images/Anniversary Party/Anniversary_Party_1.webp",
-             "/images/Anniversary Party/Anniversary_Party_2.webp",
-             "/images/Anniversary Party/Anniversary_Party_3.webp",
+      "/images/Anniversary Party/Anniversary_Party_2.webp",
+      "/images/Anniversary Party/Anniversary_Party_3.webp",
     ]
   },
 
@@ -285,8 +285,8 @@ export const events = [
     ],
     capacity: "Private Event",
     images: ["/images/Proposal Planning/Proposal_Planning_1.webp",
-             "/images/Proposal Planning/Proposal_Planning_2.webp",
-             "/images/Proposal Planning/Proposal_Planning_3.webp"
+      "/images/Proposal Planning/Proposal_Planning_2.webp",
+      "/images/Proposal Planning/Proposal_Planning_3.webp"
     ]
   },
 
@@ -305,9 +305,9 @@ export const events = [
     ],
     capacity: "50 – 500 Guests",
     images: ["/images/Engagement/Engagement_1.webp",
-             "/images/Engagement/Engagement_2.webp",
-             "/images/Engagement/Engagement_3.webp"
-            ]
+      "/images/Engagement/Engagement_2.webp",
+      "/images/Engagement/Engagement_3.webp"
+    ]
   },
 
   {
@@ -325,8 +325,8 @@ export const events = [
     ],
     capacity: "50 – 500 Guests",
     images: ["/images/Nikah Ceremony/Nikah_Ceremony_1.webp",
-             "/images/Nikah Ceremony/Nikah_Ceremony_2.webp",
-             "/images/Nikah Ceremony/Nikah_Ceremony_3.webp",
+      "/images/Nikah Ceremony/Nikah_Ceremony_2.webp",
+      "/images/Nikah Ceremony/Nikah_Ceremony_3.webp",
     ]
   },
 
@@ -345,8 +345,8 @@ export const events = [
     ],
     capacity: "100 – 1500 Guests",
     images: ["/images/Wedding/Wedding_1.webp",
-             "/images/Wedding/Wedding_2.webp",
-             "/images/Wedding/Wedding_3.webp"
+      "/images/Wedding/Wedding_2.webp",
+      "/images/Wedding/Wedding_3.webp"
     ]
   },
 
@@ -365,8 +365,8 @@ export const events = [
     ],
     capacity: "100 – 1000 Guests",
     images: ["/images/Reception/Reception_1.webp",
-             "/images/Reception/Reception_2.webp",
-             "/images/Reception/Reception_3.webp",
+      "/images/Reception/Reception_2.webp",
+      "/images/Reception/Reception_3.webp",
     ]
   },
 
@@ -385,8 +385,8 @@ export const events = [
     ],
     capacity: "100 – 800 Guests",
     images: ["/images/Destination Wedding/Destination_Wedding_1.webp",
-             "/images/Destination Wedding/Destination_Wedding_2.webp",
-             "/images/Destination Wedding/Destination_Wedding_3.webp"
+      "/images/Destination Wedding/Destination_Wedding_2.webp",
+      "/images/Destination Wedding/Destination_Wedding_3.webp"
     ]
   },
 
@@ -405,8 +405,8 @@ export const events = [
     ],
     capacity: "200 – 2000 Guests",
     images: ["/images/Royal Wedding Setup/Royal_Wedding_Setup_1.webp",
-             "/images/Royal Wedding Setup/Royal_Wedding_Setup_1.webp",
-             "/images/Royal Wedding Setup/Royal_Wedding_Setup_1.webp"
+      "/images/Royal Wedding Setup/Royal_Wedding_Setup_1.webp",
+      "/images/Royal Wedding Setup/Royal_Wedding_Setup_1.webp"
     ]
   },
 
@@ -425,12 +425,12 @@ export const events = [
     ],
     capacity: "20 – 300 Guests",
     images: ["/images/Vow Renewal/Vow_Renewal_1.webp",
-             "/images/Vow Renewal/Vow_Renewal_2.webp",
-             "/images/Vow Renewal/Vow_Renewal_3.webp"
+      "/images/Vow Renewal/Vow_Renewal_2.webp",
+      "/images/Vow Renewal/Vow_Renewal_3.webp"
     ]
   },
 
-    // =========================
+  // =========================
   // Corporate & Business Events
   // =========================
 
@@ -449,8 +449,8 @@ export const events = [
     ],
     capacity: "20 – 300 Guests",
     images: ["/images/Corporate Meeting/Corporate_Meeting_1.webp",
-             "/images/Corporate Meeting/Corporate_Meeting_2.webp",
-             "/images/Corporate Meeting/Corporate_Meeting_3.webp"
+      "/images/Corporate Meeting/Corporate_Meeting_2.webp",
+      "/images/Corporate Meeting/Corporate_Meeting_3.webp"
     ]
   },
 
@@ -469,8 +469,8 @@ export const events = [
     ],
     capacity: "100 – 2000 Guests",
     images: ["/images/Conference/Conference_1.webp",
-             "/images/Conference/Conference_2.webp",
-             "/images/Conference/Conference_3.webp"
+      "/images/Conference/Conference_2.webp",
+      "/images/Conference/Conference_3.webp"
     ]
   },
 
@@ -489,9 +489,9 @@ export const events = [
     ],
     capacity: "50 – 1000 Guests",
     images: ["/images/Conference/Conference_1.webp",
-             "/images/Conference/Conference_2.webp",
-             "/images/Conference/Conference_3.webp"
-             
+      "/images/Conference/Conference_2.webp",
+      "/images/Conference/Conference_3.webp"
+
     ]
   },
 
@@ -510,8 +510,8 @@ export const events = [
     ],
     capacity: "100 – 1000 Guests",
     images: ["/images/Award Night/Award_Night_1.webp",
-              "/images/Award Night/Award_Night_2.webp",
-              "/images/Award Night/Award_Night_3.webp"
+      "/images/Award Night/Award_Night_2.webp",
+      "/images/Award Night/Award_Night_3.webp"
     ]
   },
 
@@ -530,8 +530,8 @@ export const events = [
     ],
     capacity: "100 – 800 Guests",
     images: ["/images/Gala Dinner/Gala_Dinner_1.webp",
-             "/images/Gala Dinner/Gala_Dinner_2.webp",
-             "/images/Gala Dinner/Gala_Dinner_3.webp"    ]
+      "/images/Gala Dinner/Gala_Dinner_2.webp",
+      "/images/Gala Dinner/Gala_Dinner_3.webp"]
   },
 
   {
@@ -549,8 +549,8 @@ export const events = [
     ],
     capacity: "100 – 1500 Guests",
     images: ["/images/Annual Day/Annual_Day_1.webp",
-             "/images/Annual Day/Annual_Day_2.webp",
-             "/images/Annual Day/Annual_Day_3.webp"
+      "/images/Annual Day/Annual_Day_2.webp",
+      "/images/Annual Day/Annual_Day_3.webp"
     ]
   },
 
@@ -569,8 +569,8 @@ export const events = [
     ],
     capacity: "20 – 300 Guests",
     images: ["/images/Team Building Event/Team_Building_Event_1.webp",
-             "/images/Team Building Event/Team_Building_Event_2.webp",
-             "/images/Team Building Event/Team_Building_Event_3.webp"
+      "/images/Team Building Event/Team_Building_Event_2.webp",
+      "/images/Team Building Event/Team_Building_Event_3.webp"
     ]
   },
 
@@ -589,8 +589,8 @@ export const events = [
     ],
     capacity: "50 – 500 Guests",
     images: ["/images/Networking Event/Networking_Event_1.webp",
-             "/images/Networking Event/Networking_Event_2.webp",
-             "/images/Networking Event/Networking_Event_3.webp"
+      "/images/Networking Event/Networking_Event_2.webp",
+      "/images/Networking Event/Networking_Event_3.webp"
     ]
   },
 
@@ -609,8 +609,8 @@ export const events = [
     ],
     capacity: "Custom Setup",
     images: ["/images/Exhibition  Expo Booth Setup/Exhibition__Expo_Booth_Setup_1.webp",
-             "/images/Exhibition  Expo Booth Setup/Exhibition__Expo_Booth_Setup_2.webp",
-             "/images/Exhibition  Expo Booth Setup/Exhibition__Expo_Booth_Setup_3.webp"
+      "/images/Exhibition  Expo Booth Setup/Exhibition__Expo_Booth_Setup_2.webp",
+      "/images/Exhibition  Expo Booth Setup/Exhibition__Expo_Booth_Setup_3.webp"
     ]
   },
 
@@ -629,8 +629,8 @@ export const events = [
     ],
     capacity: "Flexible",
     images: ["/images/Brand Activation/Brand_Activation_1.webp",
-             "/images/Brand Activation/Brand_Activation_2.webp",
-             "/images/Brand Activation/Brand_Activation_3.webp"
+      "/images/Brand Activation/Brand_Activation_2.webp",
+      "/images/Brand Activation/Brand_Activation_3.webp"
     ]
   },
 
@@ -649,8 +649,8 @@ export const events = [
     ],
     capacity: "50 – 500 Guests",
     images: ["/images/Influencer Collaboration Event/Influencer_Collaboration_Event_1.webp",
-             "/images/Influencer Collaboration Event/Influencer_Collaboration_Event_2.webp",
-            "/images/Influencer Collaboration Event/Influencer_Collaboration_Event_3.webp"
+      "/images/Influencer Collaboration Event/Influencer_Collaboration_Event_2.webp",
+      "/images/Influencer Collaboration Event/Influencer_Collaboration_Event_3.webp"
     ]
   },
 
@@ -673,8 +673,8 @@ export const events = [
     ],
     capacity: "50 – 500 Guests",
     images: ["/images/Graduation Party/Graduation_Party_1.webp",
-             "/images/Graduation Party/Graduation_Party_2.webp",
-             "/images/Graduation Party/Graduation_Party_3.webp"
+      "/images/Graduation Party/Graduation_Party_2.webp",
+      "/images/Graduation Party/Graduation_Party_3.webp"
     ]
   },
 
@@ -693,8 +693,8 @@ export const events = [
     ],
     capacity: "200 – 2000 Guests",
     images: ["/images/Convocation Ceremony/Convocation_Ceremony_1.webp",
-             "/images/Convocation Ceremony/Convocation_Ceremony_2.webp",
-             "/images/Convocation Ceremony/Convocation_Ceremony_3.webp"
+      "/images/Convocation Ceremony/Convocation_Ceremony_2.webp",
+      "/images/Convocation Ceremony/Convocation_Ceremony_3.webp"
     ]
   },
 
@@ -713,8 +713,8 @@ export const events = [
     ],
     capacity: "200 – 1500 Guests",
     images: ["/images/School Annual Day/School_Annual_Day_1.webp",
-             "/images/School Annual Day/School_Annual_Day_2.webp",
-             "/images/School Annual Day/School_Annual_Day_3.webp"
+      "/images/School Annual Day/School_Annual_Day_2.webp",
+      "/images/School Annual Day/School_Annual_Day_3.webp"
     ]
   },
 
@@ -733,8 +733,8 @@ export const events = [
     ],
     capacity: "100 – 500 Guests",
     images: ["/images/Prom Night/Prom_Night_1.webp",
-             "/images/Prom Night/Prom_Night_2.webp",
-             "/images/Prom Night/Prom_Night_3.webp"
+      "/images/Prom Night/Prom_Night_2.webp",
+      "/images/Prom Night/Prom_Night_3.webp"
     ]
   },
 
@@ -753,8 +753,8 @@ export const events = [
     ],
     capacity: "100 – 800 Guests",
     images: ["/images/College Farewell/College_Farewell_1.webp",
-             "/images/College Farewell/College_Farewell_2.webp",
-             "/images/College Farewell/College_Farewell_3.webp"
+      "/images/College Farewell/College_Farewell_2.webp",
+      "/images/College Farewell/College_Farewell_3.webp"
     ]
   },
 
@@ -777,8 +777,8 @@ export const events = [
     ],
     capacity: "50 – 1000 Guests",
     images: ["/images/Ramadan Iftar Event/Ramadan_Iftar_Event_1.webp",
-             "/images/Ramadan Iftar Event/Ramadan_Iftar_Event_2.webp",
-             "/images/Ramadan Iftar Event/Ramadan_Iftar_Event_3.webp"
+      "/images/Ramadan Iftar Event/Ramadan_Iftar_Event_2.webp",
+      "/images/Ramadan Iftar Event/Ramadan_Iftar_Event_3.webp"
     ]
   },
 
@@ -813,7 +813,10 @@ export const events = [
       "Coordination"
     ],
     capacity: "100 – 3000 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/UAE National Day Event/UAE_National_Day_Event_1.webp",
+      "/images/UAE National Day Event/UAE_National_Day_Event_2.webp",
+      "/images/UAE National Day Event/UAE_National_Day_Event_3.webp"
+    ]
   },
 
   {
@@ -830,7 +833,10 @@ export const events = [
       "Coordination"
     ],
     capacity: "20 – 300 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Aqiqah Ceremony/Aqiqah_Ceremony_1.webp",
+      "/images/Aqiqah Ceremony/Aqiqah_Ceremony_2.webp",
+      "/images/Aqiqah Ceremony/Aqiqah_Ceremony_3.webp"
+    ]
   },
 
   {
@@ -847,7 +853,10 @@ export const events = [
       "Event Coordination"
     ],
     capacity: "200 – 5000 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Cultural Festival/Cultural_Festival_1.webp",
+      "/images/Cultural Festival/Cultural_Festival_2.webp",
+      "/images/Cultural Festival/Cultural_Festival_3.webp"
+    ]
   },
 
   {
@@ -864,7 +873,10 @@ export const events = [
       "Hospitality"
     ],
     capacity: "50 – 2000 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Religious Gatherings/Religious_Gatherings_1.webp",
+      "/images/Religious Gatherings/Religious_Gatherings_2.webp",
+      "/images/Religious Gatherings/Religious_Gatherings_3.webp"
+    ]
   },
 
   // =========================
@@ -885,7 +897,10 @@ export const events = [
       "Security Management"
     ],
     capacity: "500 – 10000 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Concert/Concert_1.webp",
+      "/images/Concert/Concert_2.webp",
+      "/images/Concert/Concert_3.webp"
+    ]
   },
 
   {
@@ -902,7 +917,10 @@ export const events = [
       "Coordination"
     ],
     capacity: "100 – 2000 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Live Music Event/Live_Music_Event_1.webp",
+      "/images/Live Music Event/Live_Music_Event_2.webp",
+      "/images/Live Music Event/Live_Music_Event_3.webp"
+    ]
   },
 
   {
@@ -919,7 +937,9 @@ export const events = [
       "Event Styling"
     ],
     capacity: "100 – 2000 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/DJ Event/DJ_Event_1.webp",
+    "/images/DJ Event/DJ_Event_2.webp",
+    "/images/DJ Event/DJ_Event_3.webp"]
   },
 
   {
@@ -936,7 +956,10 @@ export const events = [
       "Media Coverage"
     ],
     capacity: "100 – 1500 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Fashion Show/Fashion_Show_1.webp",
+      "/images/Fashion Show/Fashion_Show_2.webp",
+      "/images/Fashion Show/Fashion_Show_3.webp"
+    ]
   },
 
   {
@@ -953,7 +976,10 @@ export const events = [
       "Transportation"
     ],
     capacity: "20 – 500 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Desert Safari Private Event/Desert_Safari_Private_Event_1.webp",
+      "/images/Desert Safari Private Event/Desert_Safari_Private_Event_2.webp",
+      "/images/Desert Safari Private Event/Desert_Safari_Private_Event_3.webp"
+    ]
   },
 
   {
@@ -970,7 +996,10 @@ export const events = [
       "Coordination"
     ],
     capacity: "50 – 500 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Luxury Cruise Dinner/Luxury_Cruise_Dinner_1.webp",
+      "/images/Luxury Cruise Dinner/Luxury_Cruise_Dinner_2.webp",
+      "/images/Luxury Cruise Dinner/Luxury_Cruise_Dinner_3.webp"
+    ]
   },
 
   {
@@ -987,7 +1016,10 @@ export const events = [
       "Event Production"
     ],
     capacity: "100 – 2000 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Supercar Launch Event/Supercar_Launch_Event_1.webp",
+      "/images/Supercar Launch Event/Supercar_Launch_Event_2.webp",
+      "/images/Supercar Launch Event/Supercar_Launch_Event_3.webp"
+    ]
   },
 
   {
@@ -1004,7 +1036,10 @@ export const events = [
       "Event Management"
     ],
     capacity: "100 – 1500 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Celebrity Meet & Greet/Celebrity_Meet_&_Greet_1.webp",
+      "/images/Celebrity Meet & Greet/Celebrity_Meet_&_Greet_2.webp",
+      "/images/Celebrity Meet & Greet/Celebrity_Meet_&_Greet_3.webp"
+    ]
   },
 
   // =========================

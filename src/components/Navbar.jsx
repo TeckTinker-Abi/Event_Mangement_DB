@@ -12,26 +12,26 @@ function Navbar({ logoUrl }) {
   ];
 
   return (
-    <nav className="w-full bg-black/90 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
-<div className="px-6 lg:px-20 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <NavLink
-          to="/"
-          className="flex items-center gap-2 lg:gap-3"
-        >
-          {logoUrl && (
-            <img
-              src={logoUrl}
-              alt="Logo"
-              className="h-8 lg:h-10 w-auto object-contain"
-            />
-          )}
-          <h1 className="text-lg lg:text-2xl font-bold tracking-tight uppercase">
-            <span className="text-yellow-500">Dubai</span>
-            <span className="text-white ml-1">Event</span>
-          </h1>
-        </NavLink>
-
+    <nav className="w-full bg-transparent backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
+      <div className="px-6 lg:px-20 py-4 flex items-center justify-between">
+       {/* Logo */}
+<NavLink
+  to="/"
+  className="flex items-center"
+  onClick={() => {
+    if (window.location.pathname === "/") {
+      window.location.reload();
+    }
+  }}
+>
+  {logoUrl && (
+    <img
+      src={logoUrl}
+      alt="Logo"
+      className="h-15 lg:h-15 w-auto object-contain transition-all duration-300"
+    />
+  )}
+</NavLink>
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6 lg:gap-10">
           <div className="flex items-center gap-8 text-xs lg:text-sm font-medium uppercase tracking-[0.15em]">

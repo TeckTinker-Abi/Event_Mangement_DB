@@ -8,10 +8,12 @@ function Home() {
   const heroRef = useRef(null);
 
   /* ================= SCROLL PROGRESS ================= */
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: heroRef,
+  //   offset: ["start start", "end start"],
+  // });
+
+  const { scrollYProgress } = useScroll();
 
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -94,7 +96,8 @@ function Home() {
           <motion.h1
             variants={fadeUp}
             custom={1}
-            className="text-5xl md:text-7xl font-bold text-yellow-500 leading-tight"
+            // className="text-5xl md:text-7xl font-bold text-yellow-500 leading-tight"
+            className="text-3xl sm:text-5xl md:text-7xl font-bold text-yellow-500 leading-tight"
           >
             Bespoke Luxury Events
           </motion.h1>
@@ -158,6 +161,7 @@ function Home() {
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* <div className="className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8> */}
           {[
             {
               title: "Yacht & Cruise Experiences",
@@ -242,8 +246,9 @@ function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gray-900/70 backdrop-blur-md border border-gray-700 rounded-2xl p-12 text-center hover: transition shadow-lg"
-          >
+            // className="bg-gray-900/70 backdrop-blur-md border border-gray-700 rounded-2xl p-12 text-center hover: transition shadow-lg"
+            className="bg-gray-900/70 backdrop-blur-md border border-gray-700 rounded-2xl p-12 text-center transition shadow-lg"
+        >
             <div className="space-y-8">
               <div>
                 <p className="text-yellow-500 text-5xl font-bold">

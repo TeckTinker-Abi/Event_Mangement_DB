@@ -6,6 +6,8 @@ import About from "./pages/About";
 import CategoryPage from "./pages/CategoryPage";
 import Contact from "./pages/Contact";
 
+
+
 function App() {
   // Replace the string below with your actual logo path (e.g., "/logo.png")
   const myLogo = ""; 

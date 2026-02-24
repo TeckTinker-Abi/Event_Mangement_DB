@@ -136,7 +136,9 @@ const Contact = () => {
             Contact <span className="text-yellow-600">Us</span>
           </h1>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Let us craft unforgettable experiences in Dubai.
+            Let us craft unforgettable experiences in Dubai.</p>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+            Crafting iconic celebrations in the heart of Dubai, where every detail speaks luxury.
           </p>
         </div>
 

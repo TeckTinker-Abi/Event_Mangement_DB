@@ -66,7 +66,7 @@ function Services() {
         <motion.div style={{ scale }} className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black z-10" />
           <img
-            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80"
+            src="/images/serviceshero.webp"
             alt="Luxury Event Background"
             className="w-full h-full object-cover"
           />

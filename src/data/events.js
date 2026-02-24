@@ -19,7 +19,10 @@ export const events = [
       "Event Coordinator"
     ],
     capacity: "Up to 100 Guests",
-    images: ["/images/yacht1.webp"]
+    images: ["/images/yacht/yacht1 (1).webp",
+              "/images/yacht/yacht1 (2).webp",
+              "/images/yacht/yacht1 (3).webp"
+    ]
   },
 
   {

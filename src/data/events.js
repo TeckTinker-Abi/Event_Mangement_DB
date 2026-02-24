@@ -488,9 +488,9 @@ export const events = [
       "Event Production"
     ],
     capacity: "50 – 1000 Guests",
-    images: ["/images/Conference/Conference_1.webp",
-      "/images/Conference/Conference_2.webp",
-      "/images/Conference/Conference_3.webp"
+    images: ["/images/Product Launch/Product_Launch_1.webp",
+      "/images/Product Launch/Product_Launch_2.webp",
+      "/images/Product Launch/Product_Launch_3.webp"
 
     ]
   },
@@ -796,7 +796,10 @@ export const events = [
       "Event Management"
     ],
     capacity: "50 – 1000 Guests",
-    images: ["/images/Eid Celebration/Ramadan_Iftar_Event_1.webp"]
+    images: ["/images/Eid Celebration/Eid_Celebration_1.webp",
+             "/images/Eid Celebration/Eid_Celebration_2.webp",
+             "/images/Eid Celebration/Eid_Celebration_3.webp"
+    ]
   },
 
   {
@@ -1060,7 +1063,10 @@ export const events = [
       "Hospitality"
     ],
     capacity: "20 – 500 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Funeral Arrangement/Funeral_Arrangement_1.webp",
+             "/images/Funeral Arrangement/Funeral_Arrangement_2.webp",
+             "/images/Funeral Arrangement/Funeral_Arrangement_3.webp",
+    ]
   },
 
   {
@@ -1077,7 +1083,10 @@ export const events = [
       "Coordination"
     ],
     capacity: "20 – 500 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Memorial Service/Memorial_Service_1.webp",
+             "/images/Memorial Service/Memorial_Service_2.webp",
+             "/images/Memorial Service/Memorial_Service_3.webp"
+    ]
   },
 
   {
@@ -1094,7 +1103,10 @@ export const events = [
       "Hospitality"
     ],
     capacity: "20 – 300 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Prayer Meeting/Prayer_Meeting_1.webp",
+             "/images/Prayer Meeting/Prayer_Meeting_2.webp",
+             "/images/Prayer Meeting/Prayer_Meeting_3.webp"
+    ]
   },
 
   {
@@ -1111,7 +1123,10 @@ export const events = [
       "Support Services"
     ],
     capacity: "20 – 500 Guests",
-    images: ["/images/placeholder.jpg"]
+    images: ["/images/Condolence Gathering/Condolence_Gathering_1.webp",
+             "/images/Condolence Gathering/Condolence_Gathering_2.webp",
+             "/images/Condolence Gathering/Condolence_Gathering_3.webp"
+    ]
   }
 
 ];

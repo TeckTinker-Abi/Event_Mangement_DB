@@ -1,51 +1,11 @@
-// import { Routes, Route } from "react-router-dom";
-// import Navbar from "./components/Navbar";
-// import Home from "./pages/Home";
-// import Services from "./pages/Services";
-// import About from "./pages/About";
-// import Contact from "./pages/Contact";
-
-// function App() {
-//   // Replace the string below with your actual logo path (e.g., "/logo.png")
-//   const myLogo = ""; 
-
-//   return (
-//     <div className="bg-black text-white min-h-screen flex flex-col font-sans antialiased">
-//       {/* Navbar with logo prop passed in */}
-//       <Navbar logoUrl={myLogo} />
-
-//       {/* Page Content */}
-//       <main className="flex-1 w-full">
-//         <Routes>
-//           <Route path="/" element={<Home />} />
-//           <Route path="/services" element={<Services />} />
-//           <Route path="/about" element={<About />} />
-//           <Route path="/contact" element={<Contact />} />
-//         </Routes>
-//       </main>
-
-//       {/* Recommended: Simple Footer for User-Friendliness */}
-//       <footer className="py-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-//         © {new Date().getFullYear()} Dubai Events. All rights reserved.
-//       </footer>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-
-
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import CategoryPage from "./pages/CategoryPage";
 import logo from "./assets/logoEvent.png";
-
-
 
 function App() {
   return (
@@ -59,6 +19,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
+          
+          {/* ✅ IMPORTANT: Category Dynamic Route */}
+          <Route path="/services/:category" element={<CategoryPage />} />
+          
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
@@ -71,12 +35,10 @@ function App() {
 
           {/* COLUMN 1 – BRAND */}
           <div className="flex flex-col items-start">
-
-            {/* Logo + Brand Name */}
             <div className="flex items-center gap-3 mb-6">
               <img
                 src={logo}
-                alt="Luxury Events Logo"
+                alt="Dubai Events Logo"
                 className="h-14 w-auto object-contain"
               />
               <h2 className="text-white text-xl font-bold tracking-wide">
@@ -84,17 +46,14 @@ function App() {
               </h2>
             </div>
 
-            {/* Description */}
             <p className="mb-4 text-sm leading-relaxed text-left">
               Crafting bespoke luxury events across Dubai with elegance,
               precision, and unforgettable experiences.
             </p>
 
-            {/* Phone */}
             <p className="text-yellow-500 font-semibold text-left">
               +971 50 123 4567
             </p>
-
           </div>
 
           {/* COLUMN 2 */}
@@ -140,7 +99,6 @@ function App() {
 
         </div>
 
-        {/* Bottom Copyright */}
         <div className="border-t border-gray-800 py-6 text-center text-gray-600 text-sm">
           © {new Date().getFullYear()} Dubai Events. All rights reserved.
         </div>

@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
 function EventModal({ event, onClose }) {

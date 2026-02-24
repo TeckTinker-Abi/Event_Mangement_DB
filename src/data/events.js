@@ -776,7 +776,10 @@ export const events = [
       "Coordination"
     ],
     capacity: "50 – 1000 Guests",
-    images: ["/images/Ramadan Iftar Event/College_Farewell_3.webp"]
+    images: ["/images/Ramadan Iftar Event/Ramadan_Iftar_Event_1.webp",
+             "/images/Ramadan Iftar Event/Ramadan_Iftar_Event_1.webp",
+             "/images/Ramadan Iftar Event/Ramadan_Iftar_Event_1.webp"
+    ]
   },
 
   {

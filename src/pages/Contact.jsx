@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 
 const Contact = () => {
 useEffect(() => {
@@ -117,37 +119,47 @@ useEffect(() => {
   ];
   const navigate = useNavigate();
   return (
-    <div className="relative min-h-screen text-white overflow-hidden">
+  <div className="bg-[#030712] text-white min-h-screen w-full">
 
-      {/* HERO BACKGROUND IMAGE */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/contactbg.webp"
-          alt="Luxury Event Background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/80"></div>
-      </div>
+    <div className="relative z-10 px-6 md:px-20 py-8 max-w-7xl mx-auto"> 
 
       {/* CONTENT */}
       <div className="relative z-10 px-6 md:px-20 py-16">
 
         {/* Hero */}
-        <div className="text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+       <div className="text-center mb-16 -mt-10">
+          
+          <h1 className="text-5xl md:text-5xl font-bold mb-4">
             Contact <span className="text-yellow-600">Us</span>
           </h1>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Let us craft unforgettable experiences in Dubai.</p>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-            Crafting iconic celebrations in the heart of Dubai, where every detail speaks luxury.
+          <p className="text-gray-300 max-w-4xl mx-auto">
+            We don’t follow trends — we define them.</p>
+            <p className="text-gray-300 max-w-4xl mx-auto">
+            Crafting immersive, high-impact experiences that command attention and leave lasting impressions.
           </p>
         </div>
+       <motion.div
+  initial={{ width: 0 }}
+  animate={{ width: "140px" }}
+  transition={{ duration: 0.8 }}
+  className="relative h-[2px] mx-auto mb-6 rounded-full overflow-hidden"
+>
+  <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600" />
+  <motion.div
+    animate={{ x: ["-100%", "100%"] }}
+    transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent"
+  />
+</motion.div>
 
         {/* Contact Cards */}
-        <div className="max-w-6xl mx-auto mb-24 grid md:grid-cols-2 gap-10">
+        <div className="max-w-5xl mx-auto mb-24 grid md:grid-cols-2 gap-10">
           {[
-            { title: "Location", value: "Dubai, United Arab Emirates" },
+           {
+  title: "Location",
+  value: "Dubai, United Arab Emirates",
+  link: "https://www.google.com/maps?q=Dubai,+United+Arab+Emirates"
+},
             { title: "Phone", value: "+971 50 123 4567", link: "tel:+971501234567" },
             { title: "Email", value: "info@dubaievents.com", link: "mailto:info@dubaievents.com" },
             { title: "Business Hours", value: "Monday – Saturday : 9:00 AM – 8:00 PM" },
@@ -158,16 +170,28 @@ useEffect(() => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative overflow-hidden bg-gradient-to-br from-zinc-900/90 via-zinc-800/80 to-black/80 backdrop-blur-xl p-10 rounded-3xl border border-yellow-600/40 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 shadow-[0_0_25px_rgba(234,179,8,0.25)] hover:shadow-[0_0_60px_rgba(234,179,8,0.55)]"
-            >
+           
+           className="relative overflow-hidden
+bg-gray-900/60 backdrop-blur-md
+p-10 rounded-3xl
+border border-yellow-500/40
+transition-all duration-500
+transform hover:-translate-y-3 hover:scale-105
+shadow-[0_0_25px_rgba(255,215,0,0.15)]
+hover:shadow-[0_0_60px_rgba(255,215,0,0.5)]">
               <h3 className="text-xl font-semibold text-yellow-600 mb-4">
                 {item.title}
               </h3>
 
               {item.link ? (
-                <a href={item.link} className="text-gray-300 hover:text-yellow-500 transition">
-                  {item.value}
-                </a>
+                <a
+    href={item.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-300 hover:text-yellow-500 transition"
+  >
+    {item.value}
+  </a>
               ) : (
                 <p className="text-gray-300">{item.value}</p>
               )}
@@ -180,11 +204,13 @@ useEffect(() => {
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative w-full max-w-4xl mx-auto mb-16 md:mb-28
-          bg-gradient-to-br from-zinc-900/95 via-black/90 to-zinc-900/95
-          backdrop-blur-2xl px-5 py-8 sm:px-6 md:p-12
-          rounded-2xl md:rounded-3xl border border-yellow-600/30 shadow-2xl"
-        >
+          className="relative w-full max-w-5xl mx-auto mb-16 md:mb-28
+bg-gray-900/60 backdrop-blur-md
+px-6 py-10 md:p-12
+rounded-2xl
+border border-gray-800
+transition-all duration-300
+shadow-lg">
           <button
            type="button"
            onClick={() => navigate(-1)}
@@ -302,7 +328,7 @@ useEffect(() => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: index * 0.2 }}
         viewport={{ once: true }}
-        className="bg-yellow-600 text-black rounded-2xl p-10 text-center flex-1 transform hover:scale-105 transition-all duration-500 shadow-lg"
+        className="bg-yellow-600 text-black rounded-2xl p-10 text-center w-full md:w-78 transform hover:scale-105 transition-all duration-500 shadow-lg"
       >
         <h3 className="text-lg font-semibold mb-4">
           {item.title}
@@ -337,8 +363,68 @@ useEffect(() => {
     ))}
   </div>
 </div>
+{/* Social Media */}
+<div className="flex justify-center gap-7 mt-30 mb-25">
+  
+  <a
+    href="https://instagram.com/ourpage"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-14 h-14 flex items-center justify-center 
+               rounded-full border border-yellow-600/40
+               bg-zinc-900/80 backdrop-blur-md
+               text-yellow-500 text-xl
+               hover:bg-yellow-600 hover:text-black
+               transition-all duration-300 hover:scale-110 shadow-lg"
+  >
+    <FaInstagram />
+  </a>
+
+  <a
+    href="https://facebook.com/ourpage"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-14 h-14 flex items-center justify-center 
+               rounded-full border border-yellow-600/40
+               bg-zinc-900/80 backdrop-blur-md
+               text-yellow-500 text-xl
+               hover:bg-yellow-600 hover:text-black
+               transition-all duration-300 hover:scale-110 shadow-lg"
+  >
+    <FaFacebookF />
+  </a>
+
+  <a
+    href="https://linkedin.com/in/ourpage"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-14 h-14 flex items-center justify-center 
+               rounded-full border border-yellow-600/40
+               bg-zinc-900/80 backdrop-blur-md
+               text-yellow-500 text-xl
+               hover:bg-yellow-600 hover:text-black
+               transition-all duration-300 hover:scale-110 shadow-lg"
+  >
+    <FaLinkedinIn />
+  </a>
+
+</div>
 
       </div>
+      </div>
+      {/* Floating Call Button */}
+<a
+  href="tel:+971501234567"
+  className="fixed bottom-6 right-6 z-50 
+             w-16 h-16 flex items-center justify-center 
+             rounded-full
+             bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600
+             text-black text-xl
+             shadow-[0_0_25px_rgba(234,179,8,0.6)]
+             hover:scale-110 transition-all duration-300"
+>
+  <FaPhoneAlt />
+</a>
     </div>
   );
 };

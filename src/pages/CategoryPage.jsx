@@ -63,7 +63,7 @@ function CategoryPage() {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen selection:bg-yellow-500 selection:text-black antialiased font-sans overflow-x-hidden">
+    <div className="bg-[#030712] text-white min-h-screen selection:bg-yellow-500 selection:text-black antialiased font-sans overflow-x-hidden">
 
       {/* ================= BREADCRUMB ================= */}
       <div className="max-w-[1440px] mx-auto pt-32 px-6 lg:px-12">

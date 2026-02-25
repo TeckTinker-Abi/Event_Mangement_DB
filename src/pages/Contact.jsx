@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
-
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
  
   const [formData, setFormData] = useState({
     fullName: "",

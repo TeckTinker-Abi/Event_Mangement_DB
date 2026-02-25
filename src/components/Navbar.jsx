@@ -94,7 +94,7 @@ function Navbar({ logoUrl, onOpenEnquiry }) {
               }}
               className="bg-yellow-500 text-black font-extrabold px-8 py-4 rounded-lg text-sm hover:bg-yellow-400 transition-all duration-300 shadow-md hover:shadow-yellow-500/40"
             >
-              INQUIRE NOW
+              ENQUIRE NOW
             </button>
           </div>
         </div>

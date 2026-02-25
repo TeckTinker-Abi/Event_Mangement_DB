@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+
 import {
   motion,
   AnimatePresence,
@@ -11,6 +12,7 @@ import { events } from "../data/events";
 import EventCard from "../components/EventCard";
 import EventModal from "../components/EventModal";
 import { Link } from "react-router-dom";
+
 
 const CATEGORIES = [
   { id: "social", title: "Social & Private Soirées", desc: "From elite yacht parties to intimate villa gatherings in the heart of Dubai." },
@@ -26,6 +28,12 @@ function Services() {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const servicesRef = useRef(null);
 
+    /* =========================
+      SCROLL TO TOP ON LOAD
+  ========================== */
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   /* =========================
       SCROLL PROGRESS BAR
   ========================== */

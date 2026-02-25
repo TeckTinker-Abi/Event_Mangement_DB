@@ -173,7 +173,7 @@ function Home() {
       {/* SIGNATURE EXPERIENCES */}
       <section
         className="py-24 px-6 text-center"
-        style={{ backgroundColor: "#00001a" }}
+        style={{ backgroundColor: "#030712" }}
       >
         <div className="max-w-7xl mx-auto">
 
@@ -255,7 +255,7 @@ function Home() {
 
       <motion.section
         className="py-24 px-6 overflow-hidden"
-        style={{ backgroundColor: "#00001a" }} // main night-blue
+        style={{ backgroundColor: "#030712" }} // main night-blue
         initial={{ opacity: 0, y: 60 }}       // start hidden + below
         whileInView={{ opacity: 1, y: 0 }}    // slide up into view
         viewport={{ once: true }}

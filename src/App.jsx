@@ -111,7 +111,7 @@ function App() {
   // After Explore is clicked, render the full site
   return (
 
-    <div className="text-white min-h-screen bg-[#00001a]">
+    <div className="text-white min-h-screen bg-[#000000]">
 
       <Navbar
         logoUrl={logo}
@@ -141,7 +141,7 @@ function App() {
       {/* ================= FOOTER ================= */}
       <footer
         className="border-t border-gray-800 text-gray-400"
-        style={{ backgroundColor: "#00001a" }} // Custom night-dark background
+        style={{ backgroundColor: "#030712" }} // Custom night-dark background
       >
         <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-12">
 

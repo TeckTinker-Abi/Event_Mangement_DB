@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-
 import {
   motion,
   AnimatePresence,
@@ -12,7 +11,6 @@ import { events } from "../data/events";
 import EventCard from "../components/EventCard";
 import EventModal from "../components/EventModal";
 import { Link } from "react-router-dom";
-
 
 const CATEGORIES = [
   { id: "social", title: "Social & Private Soirées", desc: "From elite yacht parties to intimate villa gatherings in the heart of Dubai." },
@@ -28,17 +26,17 @@ function Services() {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const servicesRef = useRef(null);
 
-    /* =========================
+  /* =========================
       SCROLL TO TOP ON LOAD
   ========================== */
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
+
   /* =========================
       SCROLL PROGRESS BAR
   ========================== */
   const { scrollYProgress } = useScroll();
-  // Smoother spring for the progress bar to avoid "sticking"
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -48,7 +46,6 @@ function Services() {
   /* =========================
       HERO PARALLAX EFFECTS
   ========================== */
-  // Using specific ranges to prevent unnecessary calculations deep into the page
   const opacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 1.05]);
   const y = useTransform(scrollYProgress, [0, 0.2], [0, -30]);
@@ -68,26 +65,26 @@ function Services() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08, // Slightly faster stagger for a "snappier" feel
+        staggerChildren: 0.08,
         delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 }, // Increased distance for a smoother glide
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: { 
         duration: 0.9, 
-        ease: [0.22, 1, 0.36, 1] // Custom Quintic ease-out for premium smoothness
+        ease: [0.22, 1, 0.36, 1]
       },
     },
   };
 
   return (
-    <div className="bg-black text-white min-h-screen overflow-x-hidden font-sans antialiased selection:bg-yellow-500 selection:text-black">
+    <div className="bg-[#00001a] text-white min-h-screen overflow-x-hidden font-sans antialiased selection:bg-yellow-500 selection:text-black">
 
       {/* 🔥 GLOBAL SCROLL PROGRESS BAR */}
       <motion.div
@@ -98,17 +95,26 @@ function Services() {
       {/* ================= HERO SECTION ================= */}
       <section className="relative h-[100svh] min-h-[600px] flex items-center justify-center text-center overflow-hidden">
 
-        {/* Background */}
+        {/* Background Video Replacement */}
         <motion.div 
           style={{ scale, translateZ: 0 }} 
-          className="absolute inset-0 bg-black will-change-transform"
+          className="absolute inset-0 bg-[#00001a] will-change-transform"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black z-10" />
-          <img
-            src="/images/serviceshero.webp"
-            alt="Luxury Event Background"
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black z-10" />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover opacity-50"
-          />
+            poster="https://res.cloudinary.com/dsa0chszi/image/upload/v1772019377/serviceshero_yuazy4.avif" // Fallback image while video loads
+          >
+            <source 
+                src="https://res.cloudinary.com/dsa0chszi/video/upload/v1772018017/Hero1_fb8cbv.mp4" 
+                type="video/mp4" 
+            />
+            Your browser does not support the video tag.
+          </video>
         </motion.div>
 
         {/* Content */}
@@ -163,7 +169,7 @@ function Services() {
               <span className="relative z-10 group-hover:text-white transition-colors duration-500">
                 Explore Services
               </span>
-              <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.22, 1, 0.36, 1]" />
+              <div className="absolute inset-0 bg-[#00001a] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.22, 1, 0.36, 1]" />
             </motion.button>
           </motion.div>
         </motion.div>
@@ -192,7 +198,7 @@ function Services() {
             key={cat.id}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-10% 0px -10% 0px" }} // Better viewport triggering
+            viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
             className="relative"
           >
             {/* Header */}

@@ -1,17 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, useScroll, useSpring } from "framer-motion";
-import homeBg from "../assets/homebackground.png";
+// import homeBg from "../assets/homebackground.png";
+import homeVideo from "../assets/homevideo.mp4";
 
 function Home() {
   const navigate = useNavigate();
   const heroRef = useRef(null);
-
-  /* ================= SCROLL PROGRESS ================= */
-  // const { scrollYProgress } = useScroll({
-  //   target: heroRef,
-  //   offset: ["start start", "end start"],
-  // });
 
   const { scrollYProgress } = useScroll();
 
@@ -70,7 +65,10 @@ function Home() {
   };
 
   return (
-    <main className="bg-black text-white overflow-x-hidden">
+    // <main className="bg-black text-white overflow-x-hidden">
+    <main
+      className="text-white overflow-x-hidden"
+    >
 
       {/* ================= SCROLL PROGRESS BAR ================= */}
       <motion.div
@@ -79,11 +77,40 @@ function Home() {
       />
 
       {/* ================= HERO SECTION ================= */}
-      <section
+      {/* <section
         ref={heroRef}
         className="relative min-h-[95vh] flex items-center justify-center text-center px-4 overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: `url(${homeBg})` }}
+        // style={{ backgroundImage: `url(${homeBg})` }}
+        
+      > */}
+      <section
+        ref={heroRef}
+        className="relative min-h-[95vh] flex items-center justify-center text-center px-4 overflow-hidden"
       >
+
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={homeVideo} type="video/mp4" />
+        </video>
+
+        {/* Overlay */}
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/90" />
+        <div className="absolute inset-0 bg-black/30 backdrop-brightness-75" /> */}
+
+        {/* Content */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          className="max-w-5xl relative z-10"
+        ></motion.div>
+
+
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/90" />
         <div className="absolute inset-0 bg-black/30 backdrop-brightness-75" />
@@ -161,7 +188,7 @@ function Home() {
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* <div className="className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8> */}
+          {/* <div className="className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8> */}
           {[
             {
               title: "Yacht & Cruise Experiences",
@@ -219,7 +246,15 @@ function Home() {
       </section>
 
       {/* CULTURE SECTION */}
-      <section className="py-24 bg-gray-950 px-6 overflow-hidden">
+
+      <motion.section
+        className="py-24 px-6 overflow-hidden"
+        style={{ backgroundColor: "#00001a" }} // main night-blue
+        initial={{ opacity: 0, y: 60 }}       // start hidden + below
+        whileInView={{ opacity: 1, y: 0 }}    // slide up into view
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
           <motion.div
@@ -246,9 +281,8 @@ function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            // className="bg-gray-900/70 backdrop-blur-md border border-gray-700 rounded-2xl p-12 text-center hover: transition shadow-lg"
             className="bg-gray-900/70 backdrop-blur-md border border-gray-700 rounded-2xl p-12 text-center transition shadow-lg"
-        >
+          >
             <div className="space-y-8">
               <div>
                 <p className="text-yellow-500 text-5xl font-bold">
@@ -274,7 +308,7 @@ function Home() {
           </motion.div>
 
         </div>
-      </section>
+      </motion.section>
 
       {/* FINAL CTA */}
       <section className="py-10 bg-yellow-500 text-black text-center px-6">

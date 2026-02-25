@@ -169,7 +169,7 @@ function Services() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        {/* <motion.div
           animate={{ y: [0, 12, 0] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
           onClick={handleScrollDown}
@@ -179,7 +179,7 @@ function Services() {
             Scroll
           </span>
           <div className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-yellow-500 to-transparent" />
-        </motion.div>
+        </motion.div> */}
       </section>
 
       {/* ================= CATEGORY SECTIONS ================= */}

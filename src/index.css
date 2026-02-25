@@ -1,25 +1,36 @@
 @import "tailwindcss";
 
-/* Custom Scrollbar for a premium look */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #000;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #ca8a04; /* yellow-600 */
   border-radius: 10px;
+}
+
+/* ------------------------------
+   Root Background Setup
+   Ensures no white background
+------------------------------ */
+html, body, #root {
+  height: 100%;
+  background-color: #00001a; /* main site background */
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: #000;
-  color: #fff;
-}

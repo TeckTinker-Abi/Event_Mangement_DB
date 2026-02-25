@@ -9,40 +9,140 @@ import logo from "./assets/logoEvent.png";
 import { useState } from "react";
 import EnquiryModal from "./components/EnquiryModal";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
+
+  useEffect(() => {
+    // Prevent scrolling while splash is visible
+    document.body.style.overflow = showSplash ? "hidden" : "auto";
+  }, [showSplash]);
+
+  // If splash is open, show ONLY the splash screen
+  if (showSplash) {
+    return (
+
+      <div
+        className="fixed inset-0 z-50 flex flex-col items-center justify-center text-center overflow-hidden"
+        style={{ backgroundColor: "#00001a" }} // Blinking background
+      // , animation: "bgBlink 2s infinite alternate" 
+      >
+        {/* Logo */}
+        <img
+          src={logo}
+          alt="Dubai Events Logo"
+          className="w-64 mb-6"
+          style={{
+            animation: "slideUpGrow 1s ease-out forwards",
+          }}
+        />
+
+        {/* Running / appearing text lines */}
+        <div className="text-center text-gray-400 mb-8">
+          <p
+            className="text-xl font-semibold"
+            style={{
+              animation: "slideUpText 1s ease-out forwards",
+              animationDelay: "0.6s",
+              opacity: 0,
+            }}
+          >
+            Experience the Ultimate Luxury
+          </p>
+          <p
+            className="text-lg font-light"
+            style={{
+              animation: "slideUpText 1s ease-out forwards",
+              animationDelay: "1.2s",
+              opacity: 0,
+            }}
+          >
+            Dubai’s Party & Culture Awaits
+          </p>
+        </div>
+
+        {/* Explore Button */}
+        <button
+          onClick={() => setShowSplash(false)}
+          className="px-8 py-3 bg-yellow-500 text-black font-bold text-lg rounded-lg shadow-lg transform transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-2xl"
+          style={{
+            animation: "slideUpText 1s ease-out forwards, buttonPulse 2s ease-in-out infinite alternate",
+            animationDelay: "1.8s",
+            opacity: 0,
+          }}
+        >
+          Explore
+        </button>
+
+        {/* Inline keyframes */}
+        <style>
+          {`
+        /* Logo and text slide up */
+        @keyframes slideUpGrow {
+          0% { transform: translateY(100px) scale(0.5); opacity: 0; }
+          100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        @keyframes slideUpText {
+          0% { transform: translateY(50px); opacity: 0; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Button pulse glow */
+        @keyframes buttonPulse {
+          0% { transform: scale(1); box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3); }
+          100% { transform: scale(1.05); box-shadow: 0 10px 25px rgba(255, 215, 0, 0.5); }
+        }
+
+        /* Background blinking */
+        @keyframes bgBlink {
+          0% { background-color: #00001f; }
+          50% { background-color: #05002f; }
+          100% { background-color: #00001f; }
+        }
+      `}
+        </style>
+      </div>
+    )
+  }
+
+
+  // After Explore is clicked, render the full site
   return (
 
-    <div className="bg-black text-white min-h-screen flex flex-col font-sans antialiased">
+    <div className="text-white min-h-screen bg-[#00001a]">
 
-      {/* ================= NAVBAR ================= */}
       <Navbar
         logoUrl={logo}
         onOpenEnquiry={() => setIsEnquiryOpen(true)}
+        customClass="bg-transparent"
       />
 
-      {/* ================= MAIN CONTENT ================= */}
+
+      {/* MAIN CONTENT */}
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-
-          {/* ✅ IMPORTANT: Category Dynamic Route */}
           <Route path="/services/:category" element={<CategoryPage />} />
-
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+
+      {/* ENQUIRY MODAL */}
       <EnquiryModal
         isOpen={isEnquiryOpen}
         onClose={() => setIsEnquiryOpen(false)}
       />
 
-      {/* ================= FOOTER ================= */}
-      <footer className="bg-black border-t border-gray-800 text-gray-400">
 
+      {/* ================= FOOTER ================= */}
+      <footer
+        className="border-t border-gray-800 text-gray-400"
+        style={{ backgroundColor: "#00001a" }} // Custom night-dark background
+      >
         <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-12">
 
           {/* COLUMN 1 – BRAND */}

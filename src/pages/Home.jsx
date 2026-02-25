@@ -171,77 +171,83 @@ function Home() {
       </section>
 
       {/* SIGNATURE EXPERIENCES */}
-      <section className="py-24 px-6 max-w-7xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold text-yellow-500 mb-6"
-        >
-          Signature Dubai Experiences
-        </motion.h2>
+      <section
+        className="py-24 px-6 text-center"
+        style={{ backgroundColor: "#00001a" }}
+      >
+        <div className="max-w-7xl mx-auto">
 
-        <p className="text-gray-400 max-w-3xl mx-auto mb-14">
-          From ultra-luxury yacht celebrations to royal weddings and high-impact
-          corporate events, we deliver world-class experiences across Dubai.
-        </p>
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold text-yellow-500 mb-6"
+          >
+            Signature Dubai Experiences
+          </motion.h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* <div className="className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8> */}
-          {[
-            {
-              title: "Yacht & Cruise Experiences",
-              desc: "Yacht parties, private cruise dinners, luxury waterfront celebrations.",
-            },
-            {
-              title: "Private & Social Parties",
-              desc: "Beach parties, rooftop nights, villa events, birthdays & VIP celebrations.",
-            },
-            {
-              title: "Weddings & Royal Ceremonies",
-              desc: "Nikah, royal wedding setups, engagements, destination weddings.",
-            },
-            {
-              title: "Corporate & Business Events",
-              desc: "Product launches, conferences, gala dinners, award nights & expos.",
-            },
-            {
-              title: "Cultural & Religious Events",
-              desc: "Ramadan Iftar, Eid celebrations, UAE National Day & cultural festivals.",
-            },
-            {
-              title: "Education & Youth Celebrations",
-              desc: "Graduation parties, school annual days, proms & college farewells.",
-            },
-            {
-              title: "Entertainment & Luxury Shows",
-              desc: "Concerts, fashion shows, DJ nights, desert safari & celebrity events.",
-            },
-            {
-              title: "Memorial & Private Gatherings",
-              desc: "Memorial services, prayer meetings & private condolence gatherings.",
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              whileHover={{ y: -12, scale: 1.03 }}
-              onClick={() => navigate("/services")}
-              className="cursor-pointer p-8 bg-gray-900/60 backdrop-blur-md border border-gray-800 rounded-2xl hover:border-yellow-500 transition shadow-lg hover:shadow-yellow-500/20"
-            >
-              <h3 className="text-lg font-semibold text-yellow-500 mb-4">
-                {item.title}
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {item.desc}
-              </p>
-            </motion.div>
-          ))}
+          <p className="text-gray-400 max-w-3xl mx-auto mb-14">
+            From ultra-luxury yacht celebrations to royal weddings and high-impact
+            corporate events, we deliver world-class experiences across Dubai.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Yacht & Cruise Experiences",
+                desc: "Yacht parties, private cruise dinners, luxury waterfront celebrations.",
+              },
+              {
+                title: "Private & Social Parties",
+                desc: "Beach parties, rooftop nights, villa events, birthdays & VIP celebrations.",
+              },
+              {
+                title: "Weddings & Royal Ceremonies",
+                desc: "Nikah, royal wedding setups, engagements, destination weddings.",
+              },
+              {
+                title: "Corporate & Business Events",
+                desc: "Product launches, conferences, gala dinners, award nights & expos.",
+              },
+              {
+                title: "Cultural & Religious Events",
+                desc: "Ramadan Iftar, Eid celebrations, UAE National Day & cultural festivals.",
+              },
+              {
+                title: "Education & Youth Celebrations",
+                desc: "Graduation parties, school annual days, proms & college farewells.",
+              },
+              {
+                title: "Entertainment & Luxury Shows",
+                desc: "Concerts, fashion shows, DJ nights, desert safari & celebrity events.",
+              },
+              {
+                title: "Memorial & Private Gatherings",
+                desc: "Memorial services, prayer meetings & private condolence gatherings.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                whileHover={{ y: -12, scale: 1.03 }}
+                onClick={() => navigate("/services")}
+                className="cursor-pointer p-8 bg-gray-900/60 backdrop-blur-md border border-gray-800 rounded-2xl hover:border-yellow-500 transition shadow-lg hover:shadow-yellow-500/20"
+              >
+                <h3 className="text-lg font-semibold text-yellow-500 mb-4">
+                  {item.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </section>
 

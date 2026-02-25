@@ -8,6 +8,7 @@ import CategoryPage from "./pages/CategoryPage";
 import logo from "./assets/logoEvent.png";
 import { useState } from "react";
 import EnquiryModal from "./components/EnquiryModal";
+import { Link } from "react-router-dom";
 
 function App() {
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
@@ -34,7 +35,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-       <EnquiryModal
+      <EnquiryModal
         isOpen={isEnquiryOpen}
         onClose={() => setIsEnquiryOpen(false)}
       />
@@ -73,10 +74,26 @@ function App() {
               Signature Events
             </h3>
             <ul className="space-y-3 text-sm">
-              <li className="hover:text-yellow-500 transition cursor-pointer">Yacht Party</li>
-              <li className="hover:text-yellow-500 transition cursor-pointer">Private Yacht Dinner</li>
-              <li className="hover:text-yellow-500 transition cursor-pointer">Beach Party</li>
-              <li className="hover:text-yellow-500 transition cursor-pointer">Birthday Party</li>
+              <li>
+                <Link to="/services/social" className="hover:text-yellow-500 transition">
+                  Yacht Party
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/social" className="hover:text-yellow-500 transition">
+                  Private Yacht Dinner
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/social" className="hover:text-yellow-500 transition">
+                  Beach Party
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/social" className="hover:text-yellow-500 transition">
+                  Birthday Party
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -86,10 +103,26 @@ function App() {
               Luxury Experiences
             </h3>
             <ul className="space-y-3 text-sm">
-              <li className="hover:text-yellow-500 transition cursor-pointer">Ramadan Iftar Event</li>
-              <li className="hover:text-yellow-500 transition cursor-pointer">Eid Celebration</li>
-              <li className="hover:text-yellow-500 transition cursor-pointer">Graduation Party</li>
-              <li className="hover:text-yellow-500 transition cursor-pointer">Fashion Show</li>
+              <li>
+                <Link to="/services/cultural" className="hover:text-yellow-500 transition">
+                  Ramadan Iftar Event
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/cultural" className="hover:text-yellow-500 transition">
+                  Eid Celebration
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/education" className="hover:text-yellow-500 transition">
+                  Graduation Party
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/entertainment" className="hover:text-yellow-500 transition">
+                  Fashion Show
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -99,11 +132,43 @@ function App() {
               Connect With Us
             </h3>
             <ul className="space-y-4 text-sm">
-              <li className="hover:text-yellow-500 transition cursor-pointer">Instagram</li>
-              <li className="hover:text-yellow-500 transition cursor-pointer">Facebook</li>
-              <li className="hover:text-yellow-500 transition cursor-pointer">YouTube</li>
-              <li className="hover:text-yellow-500 transition cursor-pointer">
-                info@luxuryevents.com
+              <li>
+                <a
+                  href="https://instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-500 transition"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-500 transition"
+                >
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://youtube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-500 transition"
+                >
+                  YouTube
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@luxuryevents.com"
+                  className="hover:text-yellow-500 transition"
+                >
+                  info@luxuryevents.com
+                </a>
               </li>
             </ul>
           </div>

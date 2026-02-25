@@ -84,7 +84,7 @@ function Services() {
   };
 
   return (
-    <div className="bg-[#00001a] text-white min-h-screen overflow-x-hidden font-sans antialiased selection:bg-yellow-500 selection:text-black">
+    <div className="bg-[#030712] text-white min-h-screen overflow-x-hidden font-sans antialiased selection:bg-yellow-500 selection:text-black">
 
       {/* 🔥 GLOBAL SCROLL PROGRESS BAR */}
       <motion.div

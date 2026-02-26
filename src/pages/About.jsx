@@ -101,10 +101,10 @@ function About() {
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 2, ease: "easeOut" }}
-  className="absolute inset-0 w-full h-full object-cover brightness-75"
+  className="absolute inset-0 w-full h-full object-cover brightness-25"
 >
   <source 
-    src="https://res.cloudinary.com/dsa0chszi/video/upload/v1772085729/Abouthero_tidrwd.mp4"
+    src="https://res.cloudinary.com/dsa0chszi/video/upload/v1772097154/burj_qxpzol.mp4"
     type="video/mp4"
   />
 </motion.video>

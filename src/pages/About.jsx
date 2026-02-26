@@ -91,6 +91,21 @@ function About() {
         <div className="absolute inset-0 bg-[url('/images/dubai-event.jpg')] bg-cover bg-center bg-no-repeat opacity-20">
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90"></div>
         </div>
+        
+{/* Background Video */}
+<video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover"
+>
+  <source 
+    
+    src="https://res.cloudinary.com/dsa0chszi/video/upload/v1772085729/Abouthero_tidrwd.mp4"
+    type="video/mp4" 
+  />
+</video>
 
         <motion.div
           ref={ref}

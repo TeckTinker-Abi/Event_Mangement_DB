@@ -85,15 +85,14 @@ function Home() {
       > */}
       <section
         ref={heroRef}
-        className="relative min-h-[95vh] flex items-center justify-center text-center px-4 overflow-hidden"
-      >
+className="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden"      >
         {/* Background Video */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
         >
           <source src={homeVideo} type="video/mp4" />
         </video>

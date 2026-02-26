@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+
 
 const Contact = () => {
   useEffect(() => {
@@ -10,16 +13,19 @@ const Contact = () => {
   }, []);
 
   const [formData, setFormData] = useState({
-    fullName: "",
-    phone: "",
-    email: "",
-    eventType: "",
-    message: ""
-  });
+  fullName: "",
+  countryCode: "",
+  country: "in",
+  phone: "",
+  maxLength: 15,
+  email: "",
+  eventType: "",
+  message: ""
+});
 
   const [errors, setErrors] = useState({});
-
-
+const [showSuccess, setShowSuccess] = useState(false);
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     let errorMessage = "";
@@ -80,13 +86,25 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (validate() && Object.values(errors).every((err) => !err)) {
-      alert("Enquiry Submitted Successfully!");
-      console.log(formData);
-    }
-  };
+  if (validate() && Object.values(errors).every((err) => !err)) {
+    setShowSuccess(true);
+
+    setFormData({
+      fullName: "",
+      countryCode: "",
+      country: "in",
+      phone: "",
+      maxLength: 15,
+      email: "",
+      eventType: "",
+      message: ""
+    });
+
+    setErrors({});
+  }
+};
 
   const whyChooseUs = [
     {
@@ -122,8 +140,8 @@ const Contact = () => {
 <div className="bg-[#030712] text-white min-h-screen w-full pt-28">
       <div className="relative z-10 px-6 md:px-20 py-8 max-w-7xl mx-auto">
 
-        {/* CONTENT */}
-        <div className="relative z-10 px-6 md:px-20 py-16">
+      {/* CONTENT */}
+      <div className="relative z-10 px-6 md:px-20 py-8 max-w-7xl mx-auto">
 
           {/* Hero */}
           <div className="text-center mb-16 -mt-10">
@@ -224,34 +242,85 @@ shadow-lg">
 
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
 
-              <div>
-                <input
-                  type="text"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  placeholder="Full Name"
-                  required
-                  className="w-full text-sm md:text-base p-4 rounded-xl bg-zinc-800/80 border border-zinc-600 focus:border-yellow-500"
-                />
-                {errors.fullName && (
-                  <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
-                )}
-              </div>
-              <div>
-                <input
-                  type="text"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="Phone Number"
-                  required
-                  className="w-full text-sm md:text-base p-4 rounded-xl bg-zinc-800/80 border border-zinc-600 focus:border-yellow-500"
-                />
-                {errors.phone && (
-                  <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-                )}
-              </div>
+            <div className="md:col-span-2">
+  <input
+    type="text"
+    name="fullName"
+    value={formData.fullName}
+    onChange={handleChange}
+    placeholder="Enter Full Name"
+    required
+    className="w-full h-[56px] text-sm md:text-base px-4 rounded-xl bg-zinc-800/80 border border-zinc-600 focus:border-yellow-500 focus:outline-none"
+  />
+  {errors.fullName && (
+    <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
+  )}
+</div>
+ {/* Phone Section */}
+<div className="md:col-span-2 flex gap-3">
+
+  {/* COUNTRY SELECT */}
+  <div className="relative w-28 flex-shrink-0">
+
+    <PhoneInput
+      country={formData.country}
+      value=""
+      onChange={(value, data) => {
+        const calculatedLength = data.format
+          ? data.format.replace(/\D/g, "").length - data.dialCode.length
+          : 15;
+
+        setFormData({
+          ...formData,
+          country: data.countryCode,
+          countryCode: "+" + data.dialCode,
+          maxLength: calculatedLength
+        });
+      }}
+      enableSearch
+      disableCountryCode
+      inputStyle={{ display: "none" }}
+      buttonClass="manager-phone-button"
+      dropdownClass="manager-phone-dropdown"
+    />
+
+    {/* Show Country Code */}
+    {formData.countryCode && (
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none text-white font-medium">
+        {formData.countryCode}
+      </div>
+    )}
+
+  </div>
+
+  {/* PHONE NUMBER */}
+  <input
+    type="tel"
+    name="phone"
+    value={formData.phone}
+    onChange={(e) => {
+      const digits = e.target.value.replace(/\D/g, "");
+      const max = formData.maxLength || 15;
+
+      if (digits.length <= max) {
+        setFormData({ ...formData, phone: digits });
+      }
+    }}
+    placeholder="Enter phone number"
+    required
+    className="flex-1 h-[56px] px-4 rounded-xl 
+               bg-zinc-800/80 border border-zinc-600 
+               text-white focus:border-yellow-500 focus:outline-none"
+  />
+
+</div>
+
+{/* Phone Error */}
+{errors.phone && (
+  <p className="text-red-500 text-sm mt-1 md:col-span-2">
+    {errors.phone}
+  </p>
+)}
 
               <div className="md:col-span-2">
                 <input
@@ -319,57 +388,63 @@ shadow-lg">
               Why Choose Us
             </h2>
 
-            <div className="flex flex-col md:flex-row gap-10 justify-center">
-              {whyChooseUs.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 60 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="bg-yellow-600 text-black rounded-2xl p-10 text-center w-full md:w-78 transform hover:scale-105 transition-all duration-500 shadow-lg"
-                >
-                  <h3 className="text-lg font-semibold mb-4">
-                    {item.title}
-                  </h3>
-                  <p>{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          {/* FAQ */}
-          <div className="mt-20 mb-10 max-w-4xl mx-auto">
-            <h2 className="text-2xl text-yellow-600 font-semibold mb-10 text-center">
-              Frequently Asked Questions
-            </h2>
+  <div className="flex flex-col md:flex-row gap-10 justify-center">
+    {whyChooseUs.map((item, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.2 }}
+        viewport={{ once: true }}
+        className="bg-yellow-600 text-black rounded-2xl p-10 text-center w-full md:w-78 transform hover:scale-105 transition-all duration-500 shadow-lg"
+      >
+        <h3 className="text-lg font-semibold mb-4">
+          {item.title}
+        </h3>
+        <p>{item.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</div>
+{/* FAQ */}
+<div className="mt-20 mb-10 max-w-4xl ">
+  <h2 className="text-2xl text-yellow-600 font-semibold mb-10 text-left">
+    Frequently Asked Questions
+  </h2>
 
-            <div className="space-y-8">
-              {faqs.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <h3 className="font-semibold text-lg">
-                    {item.question}
-                  </h3>
-                  <p className="text-gray-300 mt-2">
-                    {item.answer}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          {/* Social Media */}
-          <div className="flex justify-center gap-7 mt-30 mb-25">
-
-            <a
-              href="https://instagram.com/ourpage"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-14 h-14 flex items-center justify-center 
+  <div className="space-y-8">
+    {faqs.map((item, index) => (
+   <motion.div
+  key={index}
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: index * 0.1 }}
+  viewport={{ once: true }}
+  className="bg-gray-900/60 backdrop-blur-md 
+             border border-yellow-500/20 
+             p-6 rounded-2xl 
+             hover:border-yellow-500/50 
+             transition-all duration-300
+             text-left"
+>
+        <h3 className="font-semibold text-lg">
+          {item.question}
+        </h3>
+        <p className="text-gray-300 mt-2">
+          {item.answer}
+        </p>
+      </motion.div>
+    ))}
+  </div>
+</div>
+{/* Social Media */}
+<div className="flex justify-center gap-7 mt-30 mb-25">
+  
+  <a
+    href="https://instagram.com/ourpage"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-14 h-14 flex items-center justify-center 
                rounded-full border border-yellow-600/40
                bg-zinc-900/80 backdrop-blur-md
                text-yellow-500 text-xl
@@ -411,19 +486,47 @@ shadow-lg">
 
         </div>
       </div>
-      {/* Floating Call Button */}
-      <a
-        href="tel:+971501234567"
-        className="fixed bottom-6 right-6 z-50 
-             w-16 h-16 flex items-center justify-center 
-             rounded-full
-             bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600
-             text-black text-xl
-             shadow-[0_0_25px_rgba(234,179,8,0.6)]
-             hover:scale-110 transition-all duration-300"
-      >
-        <FaPhoneAlt />
-      </a>
+
+      {/* SUCCESS POPUP */}
+      {showSuccess && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/70 backdrop-blur-sm z-50">
+
+          <motion.div
+            initial={{ scale: 0.7, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="relative bg-[#0b1120] border border-yellow-500/40 
+                       rounded-2xl p-10 w-[90%] max-w-md text-center
+                       shadow-[0_0_40px_rgba(255,215,0,0.4)]"
+          >
+            
+            <button
+              onClick={() => setShowSuccess(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-yellow-500 text-xl"
+            >
+              ✕
+            </button>
+
+            <h3 className="text-2xl font-semibold text-yellow-500 mb-4">
+              Success!
+            </h3>
+
+            <p className="text-gray-300">
+              Your form is submitted successfully.
+            </p>
+
+            <button
+              onClick={() => setShowSuccess(false)}
+              className="mt-6 bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 
+                         text-black px-6 py-2 rounded-lg font-semibold 
+                         hover:scale-105 transition"
+            >
+              Close
+            </button>
+
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };

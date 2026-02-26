@@ -1,18 +1,23 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const EnquiryModal = ({ isOpen, onClose }) => {
-
-  const [formData, setFormData] = useState({
-    fullName: "",
-    phone: "",
-    email: "",
-    eventType: "",
-    message: ""
-  });
+const [formData, setFormData] = useState({
+  fullName: "",
+  countryCode: "",
+  country: "in",
+  phone: "",
+  maxLength: 15,
+  email: "",
+  eventType: "",
+  message: ""
+});
 
   const [errors, setErrors] = useState({});
+  const [showSuccess, setShowSuccess] = useState(false);
 
   // Prevent background scrolling
   useEffect(() => {
@@ -90,14 +95,22 @@ const EnquiryModal = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (validate() && Object.values(errors).every((err) => !err)) {
-      console.log("Form Submitted:", formData);
-      alert("Thank you! Your enquiry has been sent.");
-      onClose();
-    }
-  };
+  if (validate() && Object.values(errors).every((err) => !err)) {
+    setShowSuccess(true);
+
+    setFormData({
+      fullName: "",
+      phone: "",
+      email: "",
+      eventType: "",
+      message: ""
+    });
+
+    setErrors({});
+  }
+};
 
   if (!isOpen) return null;
 
@@ -134,32 +147,78 @@ const EnquiryModal = ({ isOpen, onClose }) => {
         <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-4">
 
           {/* Full Name */}
-          <div>
-            <input
-              type="text"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-              placeholder="Full Name"
-              required
-              className="w-full p-4 rounded-xl bg-zinc-900 text-white border border-zinc-700 focus:border-yellow-500 outline-none"
-            />
-            {errors.fullName && (
-              <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
-            )}
-          </div>
+          <div className="md:col-span-2">
+  <input
+    type="text"
+    name="fullName"
+    value={formData.fullName}
+    onChange={handleChange}
+    placeholder="Full Name"
+    required
+    className="w-full p-4 rounded-xl bg-zinc-900 text-white border border-zinc-700 focus:border-yellow-500 outline-none"
+  />
+  {errors.fullName && (
+    <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
+  )}
+</div>
 
-          {/* Phone */}
-          <div>
-            <input
-              type="text"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Phone Number"
-              required
-              className="w-full p-4 rounded-xl bg-zinc-900 text-white border border-zinc-700 focus:border-yellow-500 outline-none"
-            />
+          {/* Phone Section */}
+<div className="md:col-span-2 flex gap-3">
+
+  {/* COUNTRY SELECT */}
+  <div className="relative w-28 flex-shrink-0">
+
+    <PhoneInput
+      country={formData.country}
+      value=""
+      onChange={(value, data) => {
+        const calculatedLength = data.format
+          ? data.format.replace(/\D/g, "").length - data.dialCode.length
+          : 15;
+
+        setFormData({
+          ...formData,
+          country: data.countryCode,
+          countryCode: "+" + data.dialCode,
+          maxLength: calculatedLength
+        });
+      }}
+      enableSearch
+      disableCountryCode
+      inputStyle={{ display: "none" }}
+      buttonClass="manager-phone-button"
+      dropdownClass="manager-phone-dropdown"
+    />
+
+    {formData.countryCode && (
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none text-white font-medium">
+        {formData.countryCode}
+      </div>
+    )}
+  </div>
+
+  {/* PHONE NUMBER */}
+  <input
+    type="tel"
+    name="phone"
+    value={formData.phone}
+    onChange={(e) => {
+      const digits = e.target.value.replace(/\D/g, "");
+      const max = formData.maxLength || 15;
+
+      if (digits.length <= max) {
+        setFormData({ ...formData, phone: digits });
+      }
+    }}
+    placeholder="Enter phone number"
+    required
+    className="flex-1 p-4 rounded-xl 
+               bg-zinc-900 text-white 
+               border border-zinc-700 
+               focus:border-yellow-500 outline-none"
+  />
+
+
             {errors.phone && (
               <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
             )}
@@ -227,6 +286,53 @@ const EnquiryModal = ({ isOpen, onClose }) => {
           >
             Submit Enquiry
           </button>
+          {/* SUCCESS POPUP */}
+{showSuccess && (
+  <div className="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm rounded-3xl">
+
+    <motion.div
+      initial={{ scale: 0.7, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className="relative bg-[#0b1120] border border-yellow-500/40 
+                 rounded-2xl p-8 w-[90%] max-w-sm text-center
+                 shadow-[0_0_40px_rgba(255,215,0,0.4)]"
+    >
+
+      {/* Close Button */}
+      <button
+        onClick={() => {
+          setShowSuccess(false);
+          onClose();   // close entire modal after success
+        }}
+        className="absolute top-3 right-3 text-gray-400 hover:text-yellow-500"
+      >
+        ✕
+      </button>
+
+      <h3 className="text-xl font-semibold text-yellow-500 mb-3">
+        Success!
+      </h3>
+
+      <p className="text-gray-300 text-sm">
+        Your enquiry has been submitted successfully.
+      </p>
+
+      <button
+        onClick={() => {
+          setShowSuccess(false);
+          onClose();
+        }}
+        className="mt-5 bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 
+                   text-black px-5 py-2 rounded-lg font-semibold 
+                   hover:scale-105 transition"
+      >
+        Close
+      </button>
+
+    </motion.div>
+  </div>
+)}
 
         </form>
       </motion.div>

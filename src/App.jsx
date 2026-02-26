@@ -10,10 +10,18 @@ import { useState } from "react";
 import EnquiryModal from "./components/EnquiryModal";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-
+import "./App.css";
+import { FaWhatsapp } from "react-icons/fa";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
+  const whatsappNumber = "971501234567"; // without +
+const whatsappMessage = encodeURIComponent(
+  "Hi Dubai Events, I would like to enquire about your luxury event services."
+);
+
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   useEffect(() => {
     // Prevent scrolling while splash is visible
@@ -281,6 +289,16 @@ function App() {
         </div>
 
       </footer>
+      <a
+  href={whatsappLink}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-6 right-6 bg-green-500 hover:scale-110 hover:shadow-yellow-500/40 text-white p-4 rounded-full shadow-xl transition-all duration-300 z-50"
+>
+  <FaWhatsapp size={28} />
+</a>
+ <WhatsAppFloat />
+
 
     </div>
   );

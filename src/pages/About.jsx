@@ -85,7 +85,7 @@ function About() {
   };
 
   return (
-<div className="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen overflow-hidden pt-28">      {/* Enhanced Hero Section */}
+<div className="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen overflow-hidden">     {/* Enhanced Hero Section */}
       {/* Enhanced Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/dubai-event.jpg')] bg-cover bg-center bg-no-repeat opacity-20">
@@ -93,19 +93,23 @@ function About() {
         </div>
         
 {/* Background Video */}
-<video
+<motion.video
   autoPlay
   loop
   muted
   playsInline
-  className="absolute inset-0 w-full h-full object-cover"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 2, ease: "easeOut" }}
+  className="absolute inset-0 w-full h-full object-cover brightness-75"
 >
   <source 
-    
     src="https://res.cloudinary.com/dsa0chszi/video/upload/v1772085729/Abouthero_tidrwd.mp4"
-    type="video/mp4" 
+    type="video/mp4"
   />
-</video>
+</motion.video>
+
+<div className="absolute inset-0 bg-black/40"></div>
 
         <motion.div
           ref={ref}

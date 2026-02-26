@@ -36,7 +36,7 @@ function Home() {
   };
 
   /* ================= COUNT UP COMPONENT ================= */
-  const CountUp = ({ end, duration = 2000, suffix = "" }) => {
+  const CountUp = ({ end, duration = 4000, suffix = "" }) => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
@@ -87,27 +87,25 @@ function Home() {
         ref={heroRef}
         className="relative min-h-[95vh] flex items-center justify-center text-center px-4 overflow-hidden"
       >
-
         {/* Background Video */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
         >
           <source src={homeVideo} type="video/mp4" />
         </video>
 
-        {/* Overlay */}
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/90" />
-        <div className="absolute inset-0 bg-black/30 backdrop-brightness-75" /> */}
+        {/* Overlay (from first hero) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black z-10" />
 
         {/* Content */}
         <motion.div
           initial="hidden"
           animate="visible"
-          className="max-w-5xl relative z-10"
+          className="max-w-5xl relative z-20"
         ></motion.div>
 
 

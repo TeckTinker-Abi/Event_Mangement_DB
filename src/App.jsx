@@ -111,7 +111,8 @@ function App() {
   // After Explore is clicked, render the full site
   return (
 
-    <div className="text-white min-h-screen bg-[#000000]">
+    // <div className="text-white min-h-screen bg-[#000000]">
+      <div className="text-white min-h-screen bg-transparent">
 
       <Navbar
         logoUrl={logo}

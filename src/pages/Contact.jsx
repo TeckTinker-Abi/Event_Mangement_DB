@@ -100,21 +100,51 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      setIsSubmitting(true);
-      // Simulate API call
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setShowSuccess(true);
-        setFormData(initialState);
-      }, 1500);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!validate()) {
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 3000);
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  const enquiryData = {
+    name: formData.fullName,
+    email: formData.email,
+    country: selectedCountry.name,
+    phone: `${selectedCountry.code}${formData.phone}`,
+    eventType: formData.eventType,
+    message: formData.message
+  };
+
+  try {
+    const response = await fetch("https://eventsmanagement-42zk.onrender.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(enquiryData)
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setShowSuccess(true);
     } else {
       setShowAlert(true);
-      setTimeout(() => setShowAlert(false), 3000);
     }
-  };
+
+  } catch (error) {
+    console.error("Submission Error:", error);
+    setShowAlert(true);
+  }
+
+  setIsSubmitting(false);
+};
+
 
   const whyChooseUs = [
     { title: "10+ Years Experience", desc: "Delivering premium event solutions across UAE." },

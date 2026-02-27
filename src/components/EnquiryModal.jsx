@@ -105,25 +105,87 @@ const EnquiryModal = ({ isOpen, onClose }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validate()) {
-      setIsSubmitting(true);
-      
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setShowSuccess(true);
-        console.log("Form Submitted Successfully:", { 
-            ...formData, 
-            country: selectedCountry.name,
-            fullPhone: `${selectedCountry.code}${formData.phone}` 
-        });
-      }, 1500);
+//   const handleSubmit = async (e) => {
+//   e.preventDefault();
+
+//   if (!validate()) {
+//     setShowAlert(true);
+//     setTimeout(() => setShowAlert(false), 3000);
+//     return;
+//   }
+
+//   setIsSubmitting(true);
+
+//   const form = new FormData();
+//   form.append("fullName", formData.fullName);
+//   form.append("email", formData.email);
+//   form.append("country", selectedCountry.name);
+//   form.append("phone", `${selectedCountry.code}${formData.phone}`);
+//   form.append("eventType", formData.eventType);
+//   form.append("message", formData.message);
+
+//   try {
+//     await fetch(
+//       "https://script.google.com/macros/s/AKfycbzsg37K9CRRZPYpxroRBOnV6A/exec",
+//       {
+//         method: "POST",
+//         body: form
+//       }
+//     );
+
+//     setShowSuccess(true);
+
+//   } catch (error) {
+//     console.error("Submission Error:", error);
+//     setShowAlert(true);
+//   }
+
+//   setIsSubmitting(false);
+// };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!validate()) {
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 3000);
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  const enquiryData = {
+    name: formData.fullName,
+    email: formData.email,
+    country: selectedCountry.name,
+    phone: `${selectedCountry.code}${formData.phone}`,
+    eventType: formData.eventType,
+    message: formData.message
+  };
+
+  try {
+    const response = await fetch("https://eventsmanagement-42zk.onrender.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(enquiryData)
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setShowSuccess(true);
     } else {
       setShowAlert(true);
-      setTimeout(() => setShowAlert(false), 3000);
     }
-  };
+
+  } catch (error) {
+    console.error("Submission Error:", error);
+    setShowAlert(true);
+  }
+
+  setIsSubmitting(false);
+};
 
   if (!isOpen) return null;
 

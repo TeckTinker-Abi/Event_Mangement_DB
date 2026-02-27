@@ -120,12 +120,7 @@ function About() {
         >
           {/* Logo */}
           <motion.div variants={logoVariants} className="flex items-center gap-3 mb-4">
-            <motion.img
-              src="https://res.cloudinary.com/dsa0chszi/image/upload/v1772170948/logoEvent_ciose0.png"
-              alt="Spam Events LLC"
-              variants={letterVariants}
-              className="w-16 h-16 object-contain"
-            />
+           
 
             <motion.div className="space-x-0.5">
               {["S", "P", "A", "M", " ", "E", "V", "E", "N", "T", "S", " ", "L", "L", "C"].map((letter, index) => (

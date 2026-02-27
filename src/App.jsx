@@ -141,7 +141,11 @@ function App() {
       {/* MAIN CONTENT */}
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route
+            path="/"
+            element={<Home key={window.location.pathname + Date.now()} />}
+          />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:category" element={<CategoryPage />} />
           <Route path="/about" element={<About />} />

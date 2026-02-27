@@ -13,15 +13,18 @@ import { useEffect } from "react";
 import "./App.css";
 import { FaWhatsapp } from "react-icons/fa";
 import WhatsAppFloat from "./components/WhatsAppFloat";
+import { useNavigate } from "react-router-dom";
+
 function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const whatsappNumber = "971501234567"; // without +
-const whatsappMessage = encodeURIComponent(
-  "Hi Dubai Events, I would like to enquire about your luxury event services."
-);
+  const whatsappMessage = encodeURIComponent(
+    "Hi Dubai Events, I would like to enquire about your luxury event services."
+  );
+  const navigate = useNavigate();
 
-const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   useEffect(() => {
     // Prevent scrolling while splash is visible
@@ -47,33 +50,34 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
           }}
         />
 
-        {/* Running / appearing text lines */}
-        <div className="text-center text-gray-400 mb-8">
-          <p
-            className="text-xl font-semibold"
+        {/* Ultra Stylish Luxury Text */}
+        <div className="text-center mb-8">
+          <h1
+            className="text-xl md:text-3xl font-semibold italic tracking-widest"
             style={{
-              animation: "slideUpText 1s ease-out forwards",
-              animationDelay: "0.6s",
+              fontFamily: "'Cormorant Garamond', serif",
+              background: "linear-gradient(90deg, #FFD700, #FFFFFF, #FFD700)",
+              backgroundSize: "200% auto",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              textShadow: "0 0 18px rgba(255, 215, 0, 0.9)",
+              animation: "slideUpText 1.2s ease-out forwards, shimmer 3s linear infinite",
+              animationDelay: "0.8s",
               opacity: 0,
+              letterSpacing: "3px",
             }}
           >
-            Experience the Ultimate Luxury
-          </p>
-          <p
-            className="text-lg font-light"
-            style={{
-              animation: "slideUpText 1s ease-out forwards",
-              animationDelay: "1.2s",
-              opacity: 0,
-            }}
-          >
-            Dubai’s Party & Culture Awaits
-          </p>
+            Turning Movements into Memories
+          </h1>
         </div>
+
 
         {/* Explore Button */}
         <button
-          onClick={() => setShowSplash(false)}
+          onClick={() => {
+            setShowSplash(false);
+            navigate("/", { replace: true });
+          }}
           className="px-8 py-3 bg-yellow-500 text-black font-bold text-lg rounded-lg shadow-lg transform transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-2xl"
           style={{
             animation: "slideUpText 1s ease-out forwards, buttonPulse 2s ease-in-out infinite alternate",
@@ -109,6 +113,11 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
           50% { background-color: #05002f; }
           100% { background-color: #00001f; }
         }
+
+        @keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
       `}
         </style>
       </div>
@@ -120,7 +129,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   return (
 
     // <div className="text-white min-h-screen bg-[#000000]">
-      <div className="text-white min-h-screen bg-transparent">
+    <div className="text-white min-h-screen bg-transparent">
 
       <Navbar
         logoUrl="https://res.cloudinary.com/dsa0chszi/image/upload/v1772170948/logoEvent_ciose0.png"
@@ -290,14 +299,14 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
       </footer>
       <a
-  href={whatsappLink}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="fixed bottom-6 right-6 bg-green-500 hover:scale-110 hover:shadow-yellow-500/40 text-white p-4 rounded-full shadow-xl transition-all duration-300 z-50"
->
-  <FaWhatsapp size={28} />
-</a>
- <WhatsAppFloat />
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 hover:scale-110 hover:shadow-yellow-500/40 text-white p-4 rounded-full shadow-xl transition-all duration-300 z-50"
+      >
+        <FaWhatsapp size={28} />
+      </a>
+      <WhatsAppFloat />
 
 
     </div>

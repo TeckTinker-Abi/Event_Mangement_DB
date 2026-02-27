@@ -85,7 +85,7 @@ function Home() {
       > */}
       <section
         ref={heroRef}
-className="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden"      >
+        className="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden"      >
         {/* Background Video */}
         <video
           autoPlay

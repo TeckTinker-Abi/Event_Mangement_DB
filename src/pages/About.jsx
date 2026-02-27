@@ -85,31 +85,31 @@ function About() {
   };
 
   return (
-<div className="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen overflow-hidden">     {/* Enhanced Hero Section */}
+    <div className="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen overflow-hidden">     {/* Enhanced Hero Section */}
       {/* Enhanced Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/dubai-event.jpg')] bg-cover bg-center bg-no-repeat opacity-20">
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90"></div>
         </div>
-        
-{/* Background Video */}
-<motion.video
-  autoPlay
-  loop
-  muted
-  playsInline
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 2, ease: "easeOut" }}
-  className="absolute inset-0 w-full h-full object-cover brightness-25"
->
-  <source 
-    src="https://res.cloudinary.com/dsa0chszi/video/upload/v1772097154/burj_qxpzol.mp4"
-    type="video/mp4"
-  />
-</motion.video>
 
-<div className="absolute inset-0 bg-black/40"></div>
+        {/* Background Video */}
+        <motion.video
+          autoPlay
+          loop
+          muted
+          playsInline
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="absolute inset-0 w-full h-full object-cover brightness-25"
+        >
+          <source
+            src="https://res.cloudinary.com/dsa0chszi/video/upload/v1772097154/burj_qxpzol.mp4"
+            type="video/mp4"
+          />
+        </motion.video>
+
+        <div className="absolute inset-0 bg-black/40"></div>
 
         <motion.div
           ref={ref}
@@ -121,14 +121,14 @@ function About() {
           {/* Logo */}
           <motion.div variants={logoVariants} className="flex items-center gap-3 mb-4">
             <motion.img
-              src="https://res.cloudinary.com/dsa0chszi/video/upload/v1772171080/homevideo_f2uy4s.mp4"
+              src="https://res.cloudinary.com/dsa0chszi/image/upload/v1772170948/logoEvent_ciose0.png"
               alt="Spam Events LLC"
               variants={letterVariants}
               className="w-16 h-16 object-contain"
             />
 
             <motion.div className="space-x-0.5">
-              {["S","P","A","M"," ","E","V","E","N","T","S"," ","L","L","C"].map((letter, index) => (
+              {["S", "P", "A", "M", " ", "E", "V", "E", "N", "T", "S", " ", "L", "L", "C"].map((letter, index) => (
                 <motion.span
                   key={index}
                   variants={letterVariants}
@@ -152,11 +152,11 @@ function About() {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-200 font-normal leading-relaxed mt-6 font-[Cormorant_Garamond]">
-               At SPAMS EVENTS L.L.C, we believe every celebration tells a story — and we are here to craft it with elegance and precision. Headquartered in Dubai, we specialize in designing and executing luxury events that reflect sophistication, creativity, and flawless attention to detail.
+              At SPAMS EVENTS L.L.C, we believe every celebration tells a story — and we are here to craft it with elegance and precision. Headquartered in Dubai, we specialize in designing and executing luxury events that reflect sophistication, creativity, and flawless attention to detail.
 
-From extravagant weddings and high-profile corporate galas to private yacht parties and exclusive VIP gatherings, our team transforms visions into extraordinary experiences. We collaborate with elite venues and trusted vendors to ensure every event is seamlessly curated from concept to completion.
+              From extravagant weddings and high-profile corporate galas to private yacht parties and exclusive VIP gatherings, our team transforms visions into extraordinary experiences. We collaborate with elite venues and trusted vendors to ensure every event is seamlessly curated from concept to completion.
 
-With a passion for innovation and a commitment to excellence, we don’t just organize events — we create timeless memories that leave a lasting impression.
+              With a passion for innovation and a commitment to excellence, we don’t just organize events — we create timeless memories that leave a lasting impression.
             </p>
           </motion.div>
 
@@ -210,13 +210,13 @@ With a passion for innovation and a commitment to excellence, we don’t just or
               Dubai's Leading Event Creators
             </h2>
             <p className="text-lg md:text-xl text-gray-400 leading-loose max-w-2xl">
- We specialize in curating bespoke events across Dubai, where every celebration is thoughtfully designed to reflect individuality, prestige, and refined taste. By seamlessly blending innovation with timeless elegance, we transform creative concepts into immersive experiences that captivate and inspire.
+              We specialize in curating bespoke events across Dubai, where every celebration is thoughtfully designed to reflect individuality, prestige, and refined taste. By seamlessly blending innovation with timeless elegance, we transform creative concepts into immersive experiences that captivate and inspire.
 
-From the initial vision to the final execution, our team ensures that every detail — from venue styling and décor to lighting, entertainment, and guest experience — is meticulously planned and flawlessly delivered. Our commitment to precision and excellence allows us to craft unforgettable moments that are not only visually stunning but emotionally meaningful.
+              From the initial vision to the final execution, our team ensures that every detail — from venue styling and décor to lighting, entertainment, and guest experience — is meticulously planned and flawlessly delivered. Our commitment to precision and excellence allows us to craft unforgettable moments that are not only visually stunning but emotionally meaningful.
 
-Each event we create is tailored to perfection, leaving a lasting impression that resonates long after the celebration ends.
-</p>
-            
+              Each event we create is tailored to perfection, leaving a lasting impression that resonates long after the celebration ends.
+            </p>
+
           </div>
 
         </div>

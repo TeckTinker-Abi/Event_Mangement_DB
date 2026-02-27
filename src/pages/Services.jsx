@@ -13,7 +13,7 @@ import EventModal from "../components/EventModal";
 import { Link } from "react-router-dom";
 
 const CATEGORIES = [
-  { id: "social", title: "Social & Private Soirées", desc: "From elite yacht parties to intimate villa gatherings in the heart of Dubai." },
+  { id: "social", title: "Social & Private", desc: "From elite yacht parties to intimate villa gatherings in the heart of Dubai." },
   { id: "wedding", title: "Weddings & Proposals", desc: "Crafting royal celebrations, destination vows, and unforgettable 'Yes' moments." },
   { id: "corporate", title: "Corporate & Brand Excellence", desc: "High-impact product launches, gala dinners, and industry-leading conferences." },
   { id: "entertainment", title: "Entertainment & Luxury", desc: "Front-row concerts, fashion shows, and exclusive supercar launch events." },

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, useScroll, useSpring } from "framer-motion";
 // import homeBg from "../assets/homebackground.png";
-import homeVideo from "../assets/homevideo.mp4";
+// import homeVideo from "../assets/homevideo.mp4";
 
 function Home() {
   const navigate = useNavigate();
@@ -94,7 +94,7 @@ className="relative min-h-screen flex items-center justify-center text-center px
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-80"
         >
-          <source src={homeVideo} type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsa0chszi/video/upload/v1772171080/homevideo_f2uy4s.mp4" />
         </video>
 
         {/* Overlay (from first hero) */}

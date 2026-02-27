@@ -2,7 +2,7 @@ import { motion, useInView, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { FaCheckCircle, FaStar, FaCalendar, FaUsers } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import logoEvent from "../assets/logoEvent.png";
+//import logoEvent from "../assets/logoEvent.png";
 
 function About() {
   const ref = useRef(null);
@@ -121,7 +121,7 @@ function About() {
           {/* Logo */}
           <motion.div variants={logoVariants} className="flex items-center gap-3 mb-4">
             <motion.img
-              src={logoEvent}
+              src="https://res.cloudinary.com/dsa0chszi/video/upload/v1772171080/homevideo_f2uy4s.mp4"
               alt="Spam Events LLC"
               variants={letterVariants}
               className="w-16 h-16 object-contain"

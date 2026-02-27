@@ -5,7 +5,7 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CategoryPage from "./pages/CategoryPage";
-import logo from "./assets/logoEvent.png";
+// import logo from "./assets/logoEvent.png";
 import { useState } from "react";
 import EnquiryModal from "./components/EnquiryModal";
 import { Link } from "react-router-dom";
@@ -39,7 +39,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
       >
         {/* Logo */}
         <img
-          src={logo}
+          src="https://res.cloudinary.com/dsa0chszi/image/upload/v1772170948/logoEvent_ciose0.png"
           alt="Dubai Events Logo"
           className="w-64 mb-6"
           style={{
@@ -123,7 +123,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
       <div className="text-white min-h-screen bg-transparent">
 
       <Navbar
-        logoUrl={logo}
+        logoUrl="https://res.cloudinary.com/dsa0chszi/image/upload/v1772170948/logoEvent_ciose0.png"
         onOpenEnquiry={() => setIsEnquiryOpen(true)}
         customClass="bg-transparent"
       />
@@ -158,7 +158,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
           <div className="flex flex-col items-start">
             <div className="flex items-center gap-3 mb-6">
               <img
-                src={logo}
+                src="https://res.cloudinary.com/dsa0chszi/image/upload/v1772170948/logoEvent_ciose0.png"
                 alt="Dubai Events Logo"
                 className="h-14 w-auto object-contain"
               />

@@ -150,7 +150,7 @@ function Navbar({ logoUrl, onOpenEnquiry }) {
         <NavLink to="/" className="flex items-center">
           {logoUrl && (
             <img
-              src={logoUrl}
+              src="https://res.cloudinary.com/dsa0chszi/image/upload/v1772170948/logoEvent_ciose0.png"
               alt="Logo"
               className="h-20 w-auto object-contain"
             />

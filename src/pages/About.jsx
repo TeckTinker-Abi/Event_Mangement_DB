@@ -227,8 +227,3 @@ Each event we create is tailored to perfection, leaving a lasting impression tha
 }
 
 export default About;
-
-
-
-
-

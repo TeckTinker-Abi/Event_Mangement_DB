@@ -163,13 +163,16 @@ const handleSubmit = async (e) => {
   };
 
   try {
-    const response = await fetch("https://eventsmanagement-42zk.onrender.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(enquiryData)
-    });
+    const response = await fetch(
+      "https://api.spamsevents.com/api/enquiry",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(enquiryData)
+      }
+    );
 
     const data = await response.json();
 
@@ -186,7 +189,6 @@ const handleSubmit = async (e) => {
 
   setIsSubmitting(false);
 };
-
   if (!isOpen) return null;
 
   return (

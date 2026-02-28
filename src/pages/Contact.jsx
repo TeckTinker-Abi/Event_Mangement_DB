@@ -100,7 +100,7 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
   e.preventDefault();
 
   if (!validate()) {
@@ -121,13 +121,16 @@ const Contact = () => {
   };
 
   try {
-    const response = await fetch("https://eventsmanagement-42zk.onrender.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(enquiryData)
-    });
+    const response = await fetch(
+      "https://api.spamsevents.com/api/enquiry",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(enquiryData)
+      }
+    );
 
     const data = await response.json();
 
@@ -144,7 +147,6 @@ const Contact = () => {
 
   setIsSubmitting(false);
 };
-
 
   const whyChooseUs = [
     { title: "10+ Years Experience", desc: "Delivering premium event solutions across UAE." },
